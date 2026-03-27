@@ -1,147 +1,260 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" width="440" height="300">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#eef2ff"/>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f4ff;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="chainGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#4f46e5"/>
-      <stop offset="100%" stop-color="#6366f1"/>
+
+    <!-- Green aura -->
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Indigo aura -->
+    <radialGradient id="indigoGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Shield gradient -->
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
     </linearGradient>
+
+    <!-- Block gradient -->
+    <linearGradient id="blockGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Leaf gradient -->
+    <linearGradient id="leafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#00000020" />
+    </filter>
+
+    <!-- Shield shadow -->
+    <filter id="shieldShadow" x="-30%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#05966940" />
+    </filter>
   </defs>
-  <rect width="600" height="400" fill="url(#bg)"/>
 
-  <!-- Title -->
-  <text x="300" y="38" font-family="Arial, sans-serif" font-size="15" fill="#312e81" text-anchor="middle" font-weight="bold">Combating Greenwashing with Blockchain</text>
-  <text x="300" y="56" font-family="Arial, sans-serif" font-size="11" fill="#6366f1" text-anchor="middle">Environmental Claims → Blockchain Audit → Truth Revealed</text>
+  <!-- Background -->
+  <rect width="440" height="300" fill="url(#bgGrad)" rx="12" />
 
-  <!-- LEFT: ESG Report with green claims -->
-  <rect x="30" y="80" width="145" height="195" rx="6" fill="#ffffff" stroke="#22c55e" stroke-width="2"/>
-  <rect x="30" y="80" width="145" height="32" rx="6" fill="#dcfce7"/>
-  <rect x="30" y="106" width="145" height="0" fill="#dcfce7"/>
-  <text x="102" y="101" font-family="Arial, sans-serif" font-size="10" fill="#16a34a" text-anchor="middle" font-weight="bold">ESG Report</text>
-  <!-- Leaf icon -->
-  <ellipse cx="60" cy="96" rx="8" ry="5" fill="#22c55e" transform="rotate(-30 60 96)" opacity="0.6"/>
-
-  <!-- Claims list -->
-  <g transform="translate(42, 125)">
-    <!-- Claim 1 -->
-    <rect x="0" y="0" width="120" height="22" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
-    <ellipse cx="12" cy="11" rx="5" ry="3.5" fill="#22c55e" transform="rotate(-20 12 11)" opacity="0.5"/>
-    <text x="22" y="15" font-family="Arial, sans-serif" font-size="8" fill="#166534">Carbon Neutral</text>
-    <!-- Claim 2 -->
-    <rect x="0" y="28" width="120" height="22" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
-    <ellipse cx="12" cy="39" rx="5" ry="3.5" fill="#22c55e" transform="rotate(-20 12 39)" opacity="0.5"/>
-    <text x="22" y="43" font-family="Arial, sans-serif" font-size="8" fill="#166534">100% Renewable</text>
-    <!-- Claim 3 -->
-    <rect x="0" y="56" width="120" height="22" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
-    <ellipse cx="12" cy="67" rx="5" ry="3.5" fill="#22c55e" transform="rotate(-20 12 67)" opacity="0.5"/>
-    <text x="22" y="71" font-family="Arial, sans-serif" font-size="8" fill="#166534">Zero Waste</text>
-    <!-- Claim 4 -->
-    <rect x="0" y="84" width="120" height="22" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
-    <ellipse cx="12" cy="95" rx="5" ry="3.5" fill="#22c55e" transform="rotate(-20 12 95)" opacity="0.5"/>
-    <text x="22" y="99" font-family="Arial, sans-serif" font-size="8" fill="#166534">Eco-Certified</text>
-    <!-- Claim 5 -->
-    <rect x="0" y="112" width="120" height="22" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
-    <ellipse cx="12" cy="123" rx="5" ry="3.5" fill="#22c55e" transform="rotate(-20 12 123)" opacity="0.5"/>
-    <text x="22" y="127" font-family="Arial, sans-serif" font-size="8" fill="#166534">Sustainable Supply</text>
+  <!-- Subtle grid -->
+  <g opacity="0.04" stroke="#4f46e5" stroke-width="1">
+    <line x1="0" y1="60" x2="440" y2="60" />
+    <line x1="0" y1="120" x2="440" y2="120" />
+    <line x1="0" y1="180" x2="440" y2="180" />
+    <line x1="0" y1="240" x2="440" y2="240" />
+    <line x1="88" y1="0" x2="88" y2="300" />
+    <line x1="176" y1="0" x2="176" y2="300" />
+    <line x1="264" y1="0" x2="264" y2="300" />
+    <line x1="352" y1="0" x2="352" y2="300" />
   </g>
-  <text x="102" y="296" font-family="Arial, sans-serif" font-size="9" fill="#16a34a" text-anchor="middle" font-weight="600">Company Claims</text>
 
-  <!-- Arrow: Report to Blockchain -->
-  <line x1="182" y1="175" x2="220" y2="175" stroke="#6366f1" stroke-width="2" stroke-dasharray="5,3"/>
-  <polygon points="220,170 232,175 220,180" fill="#6366f1"/>
+  <!-- ===================== LEFT SIDE: Environmental claims ===================== -->
 
-  <!-- CENTER: Blockchain verification -->
-  <g transform="translate(235, 95)">
-    <!-- Chain of blocks -->
-    <rect x="0" y="0" width="130" height="195" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
-    <text x="65" y="22" font-family="Arial, sans-serif" font-size="10" fill="#4f46e5" text-anchor="middle" font-weight="bold">Blockchain</text>
-    <text x="65" y="35" font-family="Arial, sans-serif" font-size="8" fill="#6366f1" text-anchor="middle">Verification</text>
+  <!-- Green aura -->
+  <ellipse cx="78" cy="150" rx="70" ry="70" fill="url(#greenGlow)" />
 
-    <!-- Block 1 -->
-    <rect x="15" y="45" width="100" height="28" rx="4" fill="#4f46e5"/>
-    <text x="65" y="58" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle">Block #4a2f...</text>
-    <text x="65" y="68" font-family="monospace" font-size="6" fill="#c7d2fe" text-anchor="middle">verify: carbon data</text>
-    <!-- Chain link -->
-    <line x1="65" y1="73" x2="65" y2="83" stroke="#6366f1" stroke-width="2"/>
-    <circle cx="65" cy="78" r="2" fill="#6366f1"/>
-
-    <!-- Block 2 -->
-    <rect x="15" y="83" width="100" height="28" rx="4" fill="#4f46e5"/>
-    <text x="65" y="96" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle">Block #7b1e...</text>
-    <text x="65" y="106" font-family="monospace" font-size="6" fill="#c7d2fe" text-anchor="middle">verify: energy src</text>
-    <!-- Chain link -->
-    <line x1="65" y1="111" x2="65" y2="121" stroke="#6366f1" stroke-width="2"/>
-    <circle cx="65" cy="116" r="2" fill="#6366f1"/>
-
-    <!-- Block 3 -->
-    <rect x="15" y="121" width="100" height="28" rx="4" fill="#4f46e5"/>
-    <text x="65" y="134" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle">Block #c9d3...</text>
-    <text x="65" y="144" font-family="monospace" font-size="6" fill="#c7d2fe" text-anchor="middle">verify: waste mgt</text>
-    <!-- Chain link -->
-    <line x1="65" y1="149" x2="65" y2="159" stroke="#6366f1" stroke-width="2"/>
-    <circle cx="65" cy="154" r="2" fill="#6366f1"/>
-
-    <!-- Block 4 -->
-    <rect x="15" y="159" width="100" height="28" rx="4" fill="#4f46e5"/>
-    <text x="65" y="172" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle">Block #e5f1...</text>
-    <text x="65" y="182" font-family="monospace" font-size="6" fill="#c7d2fe" text-anchor="middle">smart contract audit</text>
+  <!-- Main leaf -->
+  <g filter="url(#shadow)">
+    <path d="M 55 185
+             C 40 165, 38 130, 55 108
+             C 65 95, 80 88, 95 90
+             C 115 92, 128 105, 125 125
+             C 122 148, 105 168, 85 178
+             C 75 183, 63 188, 55 185 Z"
+          fill="url(#leafGrad)" />
+    <!-- Main vein -->
+    <path d="M 58 182 Q 90 140 120 95"
+          fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.6" stroke-linecap="round" />
+    <!-- Side veins -->
+    <path d="M 72 168 Q 82 152 95 145"
+          fill="none" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.45" stroke-linecap="round" />
+    <path d="M 85 150 Q 100 138 110 128"
+          fill="none" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.45" stroke-linecap="round" />
+    <!-- Stem -->
+    <path d="M 57 184 Q 50 205 48 218"
+          fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" />
   </g>
-  <text x="300" y="310" font-family="Arial, sans-serif" font-size="9" fill="#4f46e5" text-anchor="middle" font-weight="600">Smart Contract</text>
-  <text x="300" y="323" font-family="Arial, sans-serif" font-size="9" fill="#4f46e5" text-anchor="middle" font-weight="600">Audit Trail</text>
 
-  <!-- Arrow: Blockchain to Results -->
-  <line x1="372" y1="175" x2="410" y2="175" stroke="#6366f1" stroke-width="2" stroke-dasharray="5,3"/>
-  <polygon points="410,170 422,175 410,180" fill="#6366f1"/>
-
-  <!-- RIGHT: Verification Results -->
-  <g transform="translate(425, 90)">
-    <rect x="0" y="0" width="150" height="210" rx="8" fill="#ffffff" stroke="#e0e7ff" stroke-width="1.5"/>
-    <text x="75" y="22" font-family="Arial, sans-serif" font-size="10" fill="#312e81" text-anchor="middle" font-weight="bold">Results</text>
-
-    <!-- Verified claims (green checks) -->
-    <rect x="12" y="35" width="126" height="28" rx="4" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.2"/>
-    <circle cx="30" cy="49" r="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
-    <polyline points="26,49 29,53 35,45" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="45" y="47" font-family="Arial, sans-serif" font-size="7.5" fill="#166534">Carbon Neutral</text>
-    <text x="45" y="56" font-family="Arial, sans-serif" font-size="6" fill="#22c55e">VERIFIED</text>
-
-    <rect x="12" y="68" width="126" height="28" rx="4" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.2"/>
-    <circle cx="30" cy="82" r="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
-    <polyline points="26,82 29,86 35,78" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="45" y="80" font-family="Arial, sans-serif" font-size="7.5" fill="#166534">Eco-Certified</text>
-    <text x="45" y="89" font-family="Arial, sans-serif" font-size="6" fill="#22c55e">VERIFIED</text>
-
-    <!-- Failed claims (red X - greenwashing detected) -->
-    <rect x="12" y="106" width="126" height="28" rx="4" fill="#fef2f2" stroke="#ef4444" stroke-width="1.2"/>
-    <circle cx="30" cy="120" r="8" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
-    <line x1="26" y1="116" x2="34" y2="124" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-    <line x1="34" y1="116" x2="26" y2="124" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-    <text x="45" y="118" font-family="Arial, sans-serif" font-size="7.5" fill="#991b1b">100% Renewable</text>
-    <text x="45" y="127" font-family="Arial, sans-serif" font-size="6" fill="#ef4444">GREENWASHING</text>
-
-    <rect x="12" y="139" width="126" height="28" rx="4" fill="#fef2f2" stroke="#ef4444" stroke-width="1.2"/>
-    <circle cx="30" cy="153" r="8" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
-    <line x1="26" y1="149" x2="34" y2="157" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-    <line x1="34" y1="149" x2="26" y2="157" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
-    <text x="45" y="151" font-family="Arial, sans-serif" font-size="7.5" fill="#991b1b">Zero Waste</text>
-    <text x="45" y="160" font-family="Arial, sans-serif" font-size="6" fill="#ef4444">GREENWASHING</text>
-
-    <!-- Pending -->
-    <rect x="12" y="172" width="126" height="28" rx="4" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.2"/>
-    <circle cx="30" cy="186" r="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-    <text x="30" y="190" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b" text-anchor="middle" font-weight="bold">?</text>
-    <text x="45" y="184" font-family="Arial, sans-serif" font-size="7.5" fill="#92400e">Sustainable Supply</text>
-    <text x="45" y="193" font-family="Arial, sans-serif" font-size="6" fill="#f59e0b">PENDING REVIEW</text>
+  <!-- Small decorative leaves near stem -->
+  <g opacity="0.75">
+    <path d="M 30 215 C 25 205, 27 195, 35 192 C 40 190, 46 194, 44 202 C 42 210, 35 216, 30 215 Z"
+          fill="#10b981" />
+    <path d="M 31 214 Q 38 204 43 196" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.5" stroke-linecap="round" />
+    <path d="M 50 220 C 45 210, 48 200, 56 198 C 61 197, 66 201, 64 208 C 62 215, 55 221, 50 220 Z"
+          fill="#059669" />
+    <path d="M 51 219 Q 58 210 63 201" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.5" stroke-linecap="round" />
   </g>
-  <text x="500" y="320" font-family="Arial, sans-serif" font-size="9" fill="#312e81" text-anchor="middle" font-weight="600">Truth Revealed</text>
 
-  <!-- Bottom summary -->
-  <text x="300" y="360" font-family="Arial, sans-serif" font-size="10" fill="#4f46e5" text-anchor="middle" font-weight="600">Immutable blockchain records expose false environmental claims</text>
-  <text x="300" y="378" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd" text-anchor="middle">Smart contracts automate verification of ESG disclosures</text>
+  <!-- Valid claim bubble 1 -->
+  <g opacity="0.9" filter="url(#shadow)">
+    <rect x="16" y="80" width="38" height="24" rx="12" fill="#10b981" />
+    <path d="M 26 95 C 24 91, 26 87, 30 87 C 34 87, 36 91, 34 95 C 32 98, 28 99, 26 95 Z"
+          fill="#ffffff" opacity="0.85" />
+    <circle cx="44" cy="92" r="3" fill="#ffffff" opacity="0.7" />
+  </g>
 
-  <!-- Decorative -->
-  <circle cx="15" cy="385" r="3" fill="#dbeafe" opacity="0.5"/>
-  <circle cx="585" cy="15" r="3" fill="#dbeafe" opacity="0.5"/>
+  <!-- Valid claim bubble 2 -->
+  <g opacity="0.85" filter="url(#shadow)">
+    <rect x="100" y="63" width="32" height="22" rx="11" fill="#34d399" />
+    <circle cx="111" cy="74" r="4" fill="#ffffff" opacity="0.8" />
+    <circle cx="121" cy="74" r="3" fill="#ffffff" opacity="0.55" />
+  </g>
+
+  <!-- ===================== FAKE / rejected claims ===================== -->
+
+  <!-- Fake claim 1 -->
+  <g opacity="0.32">
+    <rect x="10" y="118" width="40" height="24" rx="5" fill="#ef4444" />
+    <line x1="19" y1="125" x2="29" y2="135" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+    <line x1="29" y1="125" x2="19" y2="135" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+  </g>
+
+  <!-- Fake claim 2 -->
+  <g opacity="0.28">
+    <rect x="108" y="186" width="36" height="22" rx="5" fill="#ef4444" />
+    <line x1="117" y1="192" x2="126" y2="201" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+    <line x1="126" y1="192" x2="117" y2="201" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- ===================== MIDDLE: Blockchain ===================== -->
+
+  <!-- Indigo aura -->
+  <ellipse cx="220" cy="150" rx="80" ry="65" fill="url(#indigoGlow)" />
+
+  <!-- Dashed connector line behind blocks -->
+  <line x1="155" y1="150" x2="285" y2="150" stroke="#4f46e5" stroke-width="2" stroke-opacity="0.25" stroke-dasharray="5,3" />
+
+  <!-- Arrow: leaf side to blockchain -->
+  <g opacity="0.55">
+    <line x1="138" y1="150" x2="155" y2="150" stroke="#10b981" stroke-width="2" stroke-linecap="round" />
+    <polygon points="155,145 164,150 155,155" fill="#10b981" />
+  </g>
+
+  <!-- Arrow: blockchain to shield -->
+  <g opacity="0.55">
+    <line x1="285" y1="150" x2="298" y2="150" stroke="#10b981" stroke-width="2" stroke-linecap="round" />
+    <polygon points="298,145 307,150 298,155" fill="#10b981" />
+  </g>
+
+  <!-- Block 1 (left) -->
+  <g filter="url(#shadow)">
+    <rect x="158" y="118" width="48" height="64" rx="8" fill="url(#blockGrad)" />
+    <rect x="165" y="128" width="34" height="5" rx="2.5" fill="#ffffff" opacity="0.22" />
+    <rect x="165" y="137" width="26" height="4" rx="2" fill="#ffffff" opacity="0.18" />
+    <rect x="165" y="145" width="30" height="4" rx="2" fill="#ffffff" opacity="0.18" />
+    <rect x="165" y="153" width="22" height="4" rx="2" fill="#ffffff" opacity="0.14" />
+    <circle cx="182" cy="168" r="4" fill="#ffffff" opacity="0.22" />
+  </g>
+
+  <!-- Chain link -->
+  <g opacity="0.72">
+    <ellipse cx="211" cy="150" rx="7" ry="5" fill="none" stroke="#818cf8" stroke-width="2.5" />
+    <ellipse cx="219" cy="150" rx="7" ry="5" fill="none" stroke="#818cf8" stroke-width="2.5" />
+  </g>
+
+  <!-- Block 2 (center, taller) -->
+  <g filter="url(#shadow)">
+    <rect x="226" y="110" width="52" height="80" rx="8" fill="url(#blockGrad)" />
+    <!-- Top highlight -->
+    <rect x="226" y="110" width="52" height="5" rx="8" fill="#ffffff" opacity="0.14" />
+    <rect x="234" y="121" width="36" height="5" rx="2.5" fill="#ffffff" opacity="0.22" />
+    <rect x="234" y="130" width="28" height="4" rx="2" fill="#ffffff" opacity="0.18" />
+    <rect x="234" y="138" width="32" height="4" rx="2" fill="#ffffff" opacity="0.18" />
+    <rect x="234" y="146" width="24" height="4" rx="2" fill="#ffffff" opacity="0.14" />
+    <rect x="234" y="154" width="30" height="4" rx="2" fill="#ffffff" opacity="0.14" />
+    <!-- Checkmark inside center block -->
+    <path d="M 242 170 L 248 177 L 262 162"
+          fill="none" stroke="#a7f3d0" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Rejected data diverting downward -->
+  <g opacity="0.38">
+    <path d="M 220 192 Q 220 210, 207 220"
+          fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3,2" stroke-linecap="round" />
+    <polygon points="204,215 211,223 214,212" fill="#ef4444" opacity="0.55" />
+    <rect x="190" y="222" width="28" height="20" rx="4" fill="#ef4444" opacity="0.65" />
+    <line x1="197" y1="228" x2="204" y2="235" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" />
+    <line x1="204" y1="228" x2="197" y2="235" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" />
+  </g>
+
+  <!-- ===================== RIGHT SIDE: Shield ===================== -->
+
+  <!-- Shield aura -->
+  <ellipse cx="370" cy="150" rx="65" ry="65" fill="url(#greenGlow)" />
+
+  <!-- Shield -->
+  <g filter="url(#shieldShadow)">
+    <path d="M 370 88
+             L 410 105
+             L 410 148
+             C 410 176, 392 198, 370 207
+             C 348 198, 330 176, 330 148
+             L 330 105
+             Z"
+          fill="url(#shieldGrad)" />
+    <!-- Inner highlight rim -->
+    <path d="M 370 95
+             L 404 110
+             L 404 148
+             C 404 172, 388 191, 370 200
+             C 352 191, 336 172, 336 148
+             L 336 110
+             Z"
+          fill="#ffffff" opacity="0.1" />
+    <!-- Top rim highlight -->
+    <path d="M 370 88 L 410 105 L 404 110 L 370 95 L 336 110 L 330 105 Z"
+          fill="#ffffff" opacity="0.18" />
+    <!-- Checkmark -->
+    <path d="M 350 148 L 363 163 L 392 130"
+          fill="none" stroke="#ffffff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 351 149 L 364 164 L 393 131"
+          fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.35" />
+  </g>
+
+  <!-- Sparkles around shield -->
+  <g transform="translate(317, 99)" opacity="0.72">
+    <polygon points="0,-7 1.8,-2 7,-2 2.8,1.5 4.3,7 0,4 -4.3,7 -2.8,1.5 -7,-2 -1.8,-2"
+             fill="#10b981" transform="scale(0.72)" />
+  </g>
+  <g transform="translate(422, 116)" opacity="0.62">
+    <polygon points="0,-6 1.5,-1.8 6,-1.8 2.4,1.2 3.7,6 0,3.4 -3.7,6 -2.4,1.2 -6,-1.8 -1.5,-1.8"
+             fill="#34d399" transform="scale(0.66)" />
+  </g>
+  <g transform="translate(324, 196)" opacity="0.5">
+    <polygon points="0,-5 1.3,-1.5 5,-1.5 2,1 3,5 0,3 -3,5 -2,1 -5,-1.5 -1.3,-1.5"
+             fill="#10b981" transform="scale(0.62)" />
+  </g>
+  <g transform="translate(418, 187)" opacity="0.52">
+    <polygon points="0,-5 1.3,-1.5 5,-1.5 2,1 3,5 0,3 -3,5 -2,1 -5,-1.5 -1.3,-1.5"
+             fill="#34d399" transform="scale(0.58)" />
+  </g>
+
+  <!-- Small dot accents -->
+  <circle cx="309" cy="150" r="3" fill="#10b981" opacity="0.42" />
+  <circle cx="431" cy="150" r="2.5" fill="#10b981" opacity="0.36" />
+  <circle cx="370" cy="80" r="3" fill="#34d399" opacity="0.5" />
+
+  <!-- Data flow particles -->
+  <circle cx="147" cy="144" r="2.5" fill="#10b981" opacity="0.6" />
+  <circle cx="142" cy="154" r="1.8" fill="#10b981" opacity="0.4" />
+  <circle cx="293" cy="144" r="2.5" fill="#10b981" opacity="0.6" />
+  <circle cx="297" cy="155" r="1.8" fill="#10b981" opacity="0.4" />
+
+  <!-- Bottom accent bar -->
+  <rect x="60" y="272" width="320" height="3" rx="1.5" fill="#4f46e5" opacity="0.07" />
+  <rect x="155" y="272" width="130" height="3" rx="1.5" fill="#4f46e5" opacity="0.09" />
 </svg>

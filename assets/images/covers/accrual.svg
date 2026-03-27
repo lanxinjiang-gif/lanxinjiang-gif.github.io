@@ -1,101 +1,176 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" width="440" height="300">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#eef2ff"/>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#eef2ff;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="mlArrow" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#4f46e5"/>
-      <stop offset="100%" stop-color="#6366f1"/>
+    <linearGradient id="barGradOld" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#b0bec5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#94a3b8;stop-opacity:1" />
     </linearGradient>
+    <linearGradient id="barGradNew" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#818cf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="funnelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#94a3b8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.07"/>
+    </filter>
   </defs>
-  <rect width="600" height="400" fill="url(#bg)"/>
 
-  <!-- Title -->
-  <text x="300" y="38" font-family="Arial, sans-serif" font-size="15" fill="#312e81" text-anchor="middle" font-weight="bold">Improving Accrual Estimates with ML</text>
-  <text x="300" y="56" font-family="Arial, sans-serif" font-size="11" fill="#6366f1" text-anchor="middle">Traditional Estimates vs ML-Enhanced Precision</text>
+  <!-- Background -->
+  <rect width="440" height="300" fill="url(#bgGrad)" rx="16"/>
 
-  <!-- BEFORE section (left) -->
-  <rect x="30" y="75" width="220" height="250" rx="10" fill="#ffffff" stroke="#e0e7ff" stroke-width="1.5"/>
-  <text x="140" y="100" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle" font-weight="bold">BEFORE</text>
-  <text x="140" y="115" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Traditional Estimates</text>
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="90" x2="440" y2="90" stroke="#e2e8f0" stroke-width="0.5" opacity="0.7"/>
+  <line x1="0" y1="130" x2="440" y2="130" stroke="#e2e8f0" stroke-width="0.5" opacity="0.7"/>
+  <line x1="0" y1="170" x2="440" y2="170" stroke="#e2e8f0" stroke-width="0.5" opacity="0.7"/>
+  <line x1="0" y1="210" x2="440" y2="210" stroke="#e2e8f0" stroke-width="0.5" opacity="0.7"/>
+  <line x1="0" y1="250" x2="440" y2="250" stroke="#e2e8f0" stroke-width="0.5" opacity="0.7"/>
 
-  <!-- Target/bullseye (before - scattered, inaccurate) -->
-  <circle cx="140" cy="195" r="55" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
-  <circle cx="140" cy="195" r="40" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
-  <circle cx="140" cy="195" r="25" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-  <circle cx="140" cy="195" r="10" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
-  <!-- Scattered dots (inaccurate estimates) - far from center -->
-  <circle cx="115" cy="160" r="4" fill="#f59e0b" opacity="0.7"/>
-  <circle cx="170" cy="175" r="4" fill="#f59e0b" opacity="0.7"/>
-  <circle cx="100" cy="210" r="4" fill="#f59e0b" opacity="0.7"/>
-  <circle cx="175" cy="220" r="4" fill="#f59e0b" opacity="0.7"/>
-  <circle cx="125" cy="235" r="4" fill="#f59e0b" opacity="0.7"/>
-  <circle cx="160" cy="150" r="4" fill="#f59e0b" opacity="0.7"/>
-  <circle cx="95" cy="185" r="4" fill="#f59e0b" opacity="0.7"/>
-  <circle cx="180" cy="200" r="4" fill="#f59e0b" opacity="0.7"/>
+  <!-- ===== LEFT PANEL: Traditional / Inaccurate ===== -->
+  <rect x="18" y="44" width="150" height="210" rx="10" fill="white" opacity="0.78" filter="url(#softShadow)"/>
 
-  <!-- Error bars (wide) -->
-  <line x1="110" y1="275" x2="110" y2="310" stroke="#ef4444" stroke-width="2" opacity="0.6"/>
-  <line x1="100" y1="275" x2="120" y2="275" stroke="#ef4444" stroke-width="2" opacity="0.6"/>
-  <line x1="100" y1="310" x2="120" y2="310" stroke="#ef4444" stroke-width="2" opacity="0.6"/>
-  <circle cx="110" cy="292" r="2.5" fill="#ef4444" opacity="0.6"/>
+  <!-- Baseline axis -->
+  <line x1="30" y1="232" x2="158" y2="232" stroke="#cbd5e1" stroke-width="1.5"/>
+  <!-- Vertical axis -->
+  <line x1="30" y1="100" x2="30" y2="232" stroke="#e2e8f0" stroke-width="1"/>
 
-  <line x1="170" y1="270" x2="170" y2="315" stroke="#ef4444" stroke-width="2" opacity="0.6"/>
-  <line x1="160" y1="270" x2="180" y2="270" stroke="#ef4444" stroke-width="2" opacity="0.6"/>
-  <line x1="160" y1="315" x2="180" y2="315" stroke="#ef4444" stroke-width="2" opacity="0.6"/>
-  <circle cx="170" cy="292" r="2.5" fill="#ef4444" opacity="0.6"/>
+  <!-- Bars — scattered, uneven heights (traditional, inaccurate) -->
+  <rect x="38"  y="168" width="15" height="64" rx="3" fill="url(#barGradOld)" opacity="0.88"/>
+  <rect x="61"  y="136" width="15" height="96" rx="3" fill="url(#barGradOld)" opacity="0.88"/>
+  <rect x="84"  y="180" width="15" height="52" rx="3" fill="url(#barGradOld)" opacity="0.88"/>
+  <rect x="107" y="148" width="15" height="84" rx="3" fill="url(#barGradOld)" opacity="0.88"/>
+  <rect x="130" y="186" width="15" height="46" rx="3" fill="url(#barGradOld)" opacity="0.88"/>
 
-  <text x="140" y="340" font-family="Arial, sans-serif" font-size="9" fill="#ef4444" text-anchor="middle">Wide error range</text>
+  <!-- True-value reference line (dashed) -->
+  <line x1="30" y1="178" x2="158" y2="178" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.65"/>
 
-  <!-- Central ML arrow -->
-  <rect x="260" y="170" width="80" height="50" rx="8" fill="url(#mlArrow)"/>
-  <text x="300" y="192" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">ML</text>
-  <text x="300" y="207" font-family="Arial, sans-serif" font-size="8" fill="#c7d2fe" text-anchor="middle">enhance</text>
-  <!-- Arrow indicators -->
-  <polygon points="340,195 355,185 355,205" fill="#6366f1" opacity="0.6"/>
-  <polygon points="260,195 245,185 245,205" fill="#6366f1" opacity="0.3"/>
-  <!-- Decorative arrows -->
-  <text x="300" y="240" font-family="Arial, sans-serif" font-size="22" fill="#6366f1" text-anchor="middle" opacity="0.5">→</text>
+  <!-- Error brackets above bars -->
+  <line x1="45"  y1="158" x2="45"  y2="168" stroke="#f87171" stroke-width="1.5" opacity="0.8"/>
+  <line x1="40"  y1="158" x2="50"  y2="158" stroke="#f87171" stroke-width="1.2" opacity="0.8"/>
+  <line x1="68"  y1="120" x2="68"  y2="136" stroke="#f87171" stroke-width="1.5" opacity="0.8"/>
+  <line x1="63"  y1="120" x2="73"  y2="120" stroke="#f87171" stroke-width="1.2" opacity="0.8"/>
+  <line x1="91"  y1="170" x2="91"  y2="180" stroke="#f87171" stroke-width="1.5" opacity="0.8"/>
+  <line x1="86"  y1="170" x2="96"  y2="170" stroke="#f87171" stroke-width="1.2" opacity="0.8"/>
+  <line x1="114" y1="133" x2="114" y2="148" stroke="#f87171" stroke-width="1.5" opacity="0.8"/>
+  <line x1="109" y1="133" x2="119" y2="133" stroke="#f87171" stroke-width="1.2" opacity="0.8"/>
+  <line x1="137" y1="175" x2="137" y2="186" stroke="#f87171" stroke-width="1.5" opacity="0.8"/>
+  <line x1="132" y1="175" x2="142" y2="175" stroke="#f87171" stroke-width="1.2" opacity="0.8"/>
 
-  <!-- AFTER section (right) -->
-  <rect x="355" y="75" width="220" height="250" rx="10" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
-  <text x="465" y="100" font-family="Arial, sans-serif" font-size="12" fill="#4f46e5" text-anchor="middle" font-weight="bold">AFTER</text>
-  <text x="465" y="115" font-family="Arial, sans-serif" font-size="9" fill="#6366f1" text-anchor="middle">ML-Enhanced Estimates</text>
+  <!-- Scattered dots (imprecision cloud) -->
+  <circle cx="42"  cy="108" r="3"   fill="#94a3b8" opacity="0.45"/>
+  <circle cx="68"  cy="94"  r="2.5" fill="#94a3b8" opacity="0.4"/>
+  <circle cx="90"  cy="114" r="3.5" fill="#94a3b8" opacity="0.4"/>
+  <circle cx="115" cy="100" r="2"   fill="#94a3b8" opacity="0.45"/>
+  <circle cx="138" cy="91"  r="3"   fill="#94a3b8" opacity="0.4"/>
+  <circle cx="55"  cy="85"  r="2"   fill="#b0bec5" opacity="0.38"/>
+  <circle cx="128" cy="118" r="2.5" fill="#b0bec5" opacity="0.38"/>
+  <circle cx="75"  cy="124" r="2"   fill="#94a3b8" opacity="0.35"/>
+  <circle cx="104" cy="87"  r="3"   fill="#94a3b8" opacity="0.38"/>
+  <circle cx="148" cy="105" r="2"   fill="#b0bec5" opacity="0.33"/>
+  <circle cx="35"  cy="99"  r="2.5" fill="#94a3b8" opacity="0.3"/>
+  <circle cx="155" cy="93"  r="2"   fill="#b0bec5" opacity="0.28"/>
 
-  <!-- Target/bullseye (after - precise, accurate) -->
-  <circle cx="465" cy="195" r="55" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1.5"/>
-  <circle cx="465" cy="195" r="40" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
-  <circle cx="465" cy="195" r="25" fill="#c7d2fe" stroke="#a5b4fc" stroke-width="1"/>
-  <circle cx="465" cy="195" r="10" fill="#6366f1" stroke="#4f46e5" stroke-width="1.5"/>
-  <!-- Clustered dots (accurate estimates) - tight around center -->
-  <circle cx="462" cy="192" r="4" fill="#f59e0b"/>
-  <circle cx="470" cy="198" r="4" fill="#f59e0b"/>
-  <circle cx="460" cy="200" r="4" fill="#f59e0b"/>
-  <circle cx="468" cy="189" r="4" fill="#f59e0b"/>
-  <circle cx="458" cy="194" r="4" fill="#f59e0b"/>
-  <circle cx="472" cy="193" r="4" fill="#f59e0b"/>
-  <circle cx="465" cy="203" r="4" fill="#f59e0b"/>
-  <circle cx="466" cy="186" r="4" fill="#f59e0b"/>
+  <!-- ===== MIDDLE: Funnel / ML transformation ===== -->
+  <!-- Arrow shaft -->
+  <line x1="178" y1="149" x2="260" y2="149" stroke="url(#arrowGrad)" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Arrowhead -->
+  <polygon points="256,143 268,149 256,155" fill="#4f46e5" opacity="0.9"/>
 
-  <!-- Error bars (narrow/tight) -->
-  <line x1="435" y1="285" x2="435" y2="300" stroke="#22c55e" stroke-width="2"/>
-  <line x1="429" y1="285" x2="441" y2="285" stroke="#22c55e" stroke-width="2"/>
-  <line x1="429" y1="300" x2="441" y2="300" stroke="#22c55e" stroke-width="2"/>
-  <circle cx="435" cy="292" r="2.5" fill="#22c55e"/>
+  <!-- Funnel body (wide left → narrow right) -->
+  <polygon points="183,112 244,133 244,165 183,186" fill="#eef2ff" opacity="0.7"/>
+  <polygon points="183,112 244,133 244,165 183,186" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.55" stroke-linejoin="round"/>
 
-  <line x1="495" y1="285" x2="495" y2="300" stroke="#22c55e" stroke-width="2"/>
-  <line x1="489" y1="285" x2="501" y2="285" stroke="#22c55e" stroke-width="2"/>
-  <line x1="489" y1="300" x2="501" y2="300" stroke="#22c55e" stroke-width="2"/>
-  <circle cx="495" cy="292" r="2.5" fill="#22c55e"/>
+  <!-- Neural-net nodes -->
+  <!-- Input layer (left) -->
+  <circle cx="192" cy="128" r="4.5" fill="#818cf8" opacity="0.88"/>
+  <circle cx="192" cy="149" r="4.5" fill="#818cf8" opacity="0.88"/>
+  <circle cx="192" cy="170" r="4.5" fill="#818cf8" opacity="0.88"/>
+  <!-- Hidden layer (middle) -->
+  <circle cx="220" cy="137" r="4.5" fill="#6366f1" opacity="0.92"/>
+  <circle cx="220" cy="161" r="4.5" fill="#6366f1" opacity="0.92"/>
+  <!-- Output node (right) -->
+  <circle cx="239" cy="149" r="5.5" fill="#4f46e5" opacity="0.97"/>
 
-  <text x="465" y="340" font-family="Arial, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle" font-weight="600">Tight, accurate estimates</text>
+  <!-- Connection lines input → hidden -->
+  <line x1="196.5" y1="128" x2="215.5" y2="137" stroke="#a5b4fc" stroke-width="0.9" opacity="0.55"/>
+  <line x1="196.5" y1="128" x2="215.5" y2="161" stroke="#a5b4fc" stroke-width="0.9" opacity="0.35"/>
+  <line x1="196.5" y1="149" x2="215.5" y2="137" stroke="#a5b4fc" stroke-width="0.9" opacity="0.55"/>
+  <line x1="196.5" y1="149" x2="215.5" y2="161" stroke="#a5b4fc" stroke-width="0.9" opacity="0.55"/>
+  <line x1="196.5" y1="170" x2="215.5" y2="137" stroke="#a5b4fc" stroke-width="0.9" opacity="0.35"/>
+  <line x1="196.5" y1="170" x2="215.5" y2="161" stroke="#a5b4fc" stroke-width="0.9" opacity="0.55"/>
+  <!-- Connection lines hidden → output -->
+  <line x1="224.5" y1="137" x2="233.5" y2="149" stroke="#818cf8" stroke-width="1.1" opacity="0.7"/>
+  <line x1="224.5" y1="161" x2="233.5" y2="149" stroke="#818cf8" stroke-width="1.1" opacity="0.7"/>
 
-  <!-- Improvement indicator -->
-  <text x="300" y="365" font-family="Arial, sans-serif" font-size="10" fill="#4f46e5" text-anchor="middle" font-weight="600">Accrual accuracy significantly improved</text>
-  <text x="300" y="380" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd" text-anchor="middle">Bad debts, warranty costs, revenue recognition</text>
+  <!-- ===== RIGHT PANEL: ML / Accurate ===== -->
+  <rect x="272" y="44" width="150" height="210" rx="10" fill="white" opacity="0.88" filter="url(#softShadow)"/>
 
-  <!-- Decorative -->
-  <circle cx="15" cy="385" r="3" fill="#dbeafe" opacity="0.5"/>
-  <circle cx="585" cy="15" r="3" fill="#dbeafe" opacity="0.5"/>
+  <!-- Baseline axis -->
+  <line x1="284" y1="232" x2="412" y2="232" stroke="#c7d2fe" stroke-width="1.5"/>
+  <!-- Vertical axis -->
+  <line x1="284" y1="100" x2="284" y2="232" stroke="#e0e7ff" stroke-width="1"/>
+
+  <!-- Bars — tight, uniform heights (ML, accurate) -->
+  <rect x="292" y="168" width="15" height="64" rx="3" fill="url(#barGradNew)" opacity="0.93"/>
+  <rect x="315" y="163" width="15" height="69" rx="3" fill="url(#barGradNew)" opacity="0.93"/>
+  <rect x="338" y="166" width="15" height="66" rx="3" fill="url(#barGradNew)" opacity="0.93"/>
+  <rect x="361" y="170" width="15" height="62" rx="3" fill="url(#barGradNew)" opacity="0.93"/>
+  <rect x="384" y="164" width="15" height="68" rx="3" fill="url(#barGradNew)" opacity="0.93"/>
+
+  <!-- True-value reference line (dashed) -->
+  <line x1="284" y1="178" x2="412" y2="178" stroke="#6366f1" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.6"/>
+
+  <!-- Small error brackets (tight) -->
+  <line x1="299" y1="162" x2="299" y2="168" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+  <line x1="294" y1="162" x2="304" y2="162" stroke="#6366f1" stroke-width="1.2" opacity="0.5"/>
+  <line x1="322" y1="157" x2="322" y2="163" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+  <line x1="317" y1="157" x2="327" y2="157" stroke="#6366f1" stroke-width="1.2" opacity="0.5"/>
+  <line x1="345" y1="160" x2="345" y2="166" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+  <line x1="340" y1="160" x2="350" y2="160" stroke="#6366f1" stroke-width="1.2" opacity="0.5"/>
+  <line x1="368" y1="164" x2="368" y2="170" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+  <line x1="363" y1="164" x2="373" y2="164" stroke="#6366f1" stroke-width="1.2" opacity="0.5"/>
+  <line x1="391" y1="158" x2="391" y2="164" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+  <line x1="386" y1="158" x2="396" y2="158" stroke="#6366f1" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Tight cluster of dots (converged, precise) -->
+  <circle cx="299" cy="118" r="2.5" fill="#6366f1" opacity="0.55"/>
+  <circle cx="307" cy="115" r="2"   fill="#4f46e5" opacity="0.5"/>
+  <circle cx="315" cy="120" r="3"   fill="#6366f1" opacity="0.55"/>
+  <circle cx="323" cy="114" r="2"   fill="#4f46e5" opacity="0.5"/>
+  <circle cx="331" cy="119" r="2.5" fill="#818cf8" opacity="0.55"/>
+  <circle cx="339" cy="116" r="2"   fill="#6366f1" opacity="0.5"/>
+  <circle cx="347" cy="121" r="2.5" fill="#4f46e5" opacity="0.55"/>
+  <circle cx="355" cy="115" r="2"   fill="#818cf8" opacity="0.5"/>
+  <circle cx="363" cy="118" r="3"   fill="#6366f1" opacity="0.55"/>
+  <circle cx="371" cy="113" r="2"   fill="#4f46e5" opacity="0.5"/>
+  <circle cx="379" cy="117" r="2.5" fill="#818cf8" opacity="0.55"/>
+  <circle cx="387" cy="116" r="2"   fill="#6366f1" opacity="0.5"/>
+  <circle cx="395" cy="120" r="2.5" fill="#4f46e5" opacity="0.55"/>
+
+  <!-- Bounding ellipse showing tight convergence -->
+  <ellipse cx="347" cy="117" rx="53" ry="9" fill="none" stroke="#6366f1" stroke-width="1" stroke-dasharray="3,3" opacity="0.38"/>
+
+  <!-- ===== Decorative corner accents ===== -->
+  <circle cx="32"  cy="26" r="6" fill="#94a3b8" opacity="0.22"/>
+  <circle cx="50"  cy="20" r="4" fill="#94a3b8" opacity="0.15"/>
+  <circle cx="408" cy="20" r="6" fill="#4f46e5" opacity="0.22"/>
+  <circle cx="424" cy="26" r="4" fill="#4f46e5" opacity="0.15"/>
+
+  <!-- Improvement sparkle on right panel -->
+  <polygon points="406,57 408,52 410,57 415,59 410,61 408,66 406,61 401,59" fill="#4f46e5" opacity="0.65"/>
+  <polygon points="416,50 417.5,47 419,50 422,51 419,52 417.5,55 416,52 413,51" fill="#818cf8" opacity="0.5"/>
+
+  <!-- Bottom accent dots -->
+  <circle cx="220" cy="280" r="5" fill="#6366f1" opacity="0.18"/>
+  <circle cx="205" cy="284" r="3" fill="#6366f1" opacity="0.13"/>
+  <circle cx="235" cy="284" r="3" fill="#6366f1" opacity="0.13"/>
 </svg>

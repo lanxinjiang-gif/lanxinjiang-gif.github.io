@@ -1,117 +1,197 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#eef2ff"/>
-    </linearGradient>
-    <linearGradient id="alertGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#fbbf24"/>
-      <stop offset="100%" stop-color="#f59e0b"/>
-    </linearGradient>
-  </defs>
-  <rect width="600" height="400" fill="url(#bg)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" fill="none">
+  <!-- Background -->
+  <rect width="440" height="300" fill="#f8fafc"/>
 
-  <!-- Title -->
-  <text x="300" y="38" font-family="Arial, sans-serif" font-size="15" fill="#312e81" text-anchor="middle" font-weight="bold">Real-Time Financial Statement Fraud Detection</text>
-  <text x="300" y="56" font-family="Arial, sans-serif" font-size="11" fill="#6366f1" text-anchor="middle">Streaming Financial Data → Anomaly Detection → Real-Time Alert</text>
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="60" x2="440" y2="60" stroke="#e0e7ff" stroke-width="1"/>
+  <line x1="0" y1="120" x2="440" y2="120" stroke="#e0e7ff" stroke-width="1"/>
+  <line x1="0" y1="180" x2="440" y2="180" stroke="#e0e7ff" stroke-width="1"/>
+  <line x1="0" y1="240" x2="440" y2="240" stroke="#e0e7ff" stroke-width="1"/>
+  <line x1="80" y1="0" x2="80" y2="300" stroke="#e0e7ff" stroke-width="1"/>
+  <line x1="160" y1="0" x2="160" y2="300" stroke="#e0e7ff" stroke-width="1"/>
+  <line x1="240" y1="0" x2="240" y2="300" stroke="#e0e7ff" stroke-width="1"/>
+  <line x1="320" y1="0" x2="320" y2="300" stroke="#e0e7ff" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="300" stroke="#e0e7ff" stroke-width="1"/>
 
-  <!-- Timeline base line -->
-  <line x1="40" y1="230" x2="560" y2="230" stroke="#c7d2fe" stroke-width="2"/>
-  <!-- Time markers -->
-  <line x1="70" y1="225" x2="70" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
-  <text x="70" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q1</text>
-  <line x1="160" y1="225" x2="160" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
-  <text x="160" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q2</text>
-  <line x1="250" y1="225" x2="250" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
-  <text x="250" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q3</text>
-  <line x1="340" y1="225" x2="340" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
-  <text x="340" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q4</text>
-  <line x1="430" y1="225" x2="430" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
-  <text x="430" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q5</text>
-  <line x1="520" y1="225" x2="520" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
-  <text x="520" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q6</text>
+  <!-- Monitor / dashboard frame -->
+  <rect x="30" y="30" width="380" height="220" rx="12" fill="white" stroke="#c7d2fe" stroke-width="2"/>
 
-  <!-- Normal data stream (line chart) -->
-  <polyline points="50,210 70,205 90,212 110,200 130,208 150,195 170,202 190,198 210,205 230,192 250,200 270,196 290,202 310,198" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Data dots on normal range -->
-  <circle cx="70" cy="205" r="3" fill="#6366f1"/>
-  <circle cx="130" cy="208" r="3" fill="#6366f1"/>
-  <circle cx="190" cy="198" r="3" fill="#6366f1"/>
-  <circle cx="250" cy="200" r="3" fill="#6366f1"/>
+  <!-- Monitor top bar -->
+  <rect x="30" y="30" width="380" height="32" rx="12" fill="#4f46e5"/>
+  <rect x="30" y="50" width="380" height="12" fill="#4f46e5"/>
 
-  <!-- Anomaly spike area -->
-  <polyline points="310,198 320,190 330,175 340,130 350,108 355,95 360,110 370,140 380,170 390,195 400,205 420,210 440,208 460,205 480,210 500,207 520,212 540,208 555,210" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Anomaly spike highlight -->
-  <polyline points="320,190 330,175 340,130 350,108 355,95 360,110 370,140 380,170" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Red anomaly dots -->
-  <circle cx="340" cy="130" r="4" fill="#ef4444"/>
-  <circle cx="355" cy="95" r="5" fill="#ef4444"/>
-  <circle cx="350" cy="108" r="4" fill="#ef4444"/>
+  <!-- Top bar dots -->
+  <circle cx="52" cy="46" r="5" fill="#818cf8"/>
+  <circle cx="68" cy="46" r="5" fill="#818cf8"/>
+  <circle cx="84" cy="46" r="5" fill="#818cf8"/>
 
-  <!-- Anomaly zone highlight -->
-  <rect x="315" y="80" width="70" height="160" rx="4" fill="#fef2f2" opacity="0.35" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Horizontal axis inside monitor -->
+  <line x1="55" y1="190" x2="390" y2="190" stroke="#c7d2fe" stroke-width="1.5"/>
 
-  <!-- Alert icon pointing to anomaly -->
-  <!-- Bell/alarm -->
-  <g transform="translate(355, 72)">
-    <circle cx="0" cy="-18" r="16" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
-    <!-- Bell shape -->
-    <path d="M-7,-22 C-7,-28 7,-28 7,-22 L8,-16 C8,-14 -8,-14 -8,-16 Z" fill="#f59e0b"/>
-    <rect x="-3" y="-14" width="6" height="3" rx="1.5" fill="#f59e0b"/>
-    <circle cx="0" cy="-26" r="1.5" fill="#f59e0b"/>
-    <!-- Exclamation -->
-    <text x="0" y="-16" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="bold">!</text>
-  </g>
-  <!-- Alert label -->
-  <rect x="395" y="78" width="90" height="30" rx="6" fill="#f59e0b"/>
-  <text x="440" y="97" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">ALERT!</text>
-  <line x1="385" y1="93" x2="395" y2="93" stroke="#f59e0b" stroke-width="2"/>
+  <!-- Vertical axis -->
+  <line x1="55" y1="80" x2="55" y2="190" stroke="#c7d2fe" stroke-width="1.5"/>
 
-  <!-- Threshold line (dashed) -->
-  <line x1="40" y1="160" x2="560" y2="160" stroke="#ef4444" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
-  <text x="565" y="163" font-family="Arial, sans-serif" font-size="8" fill="#ef4444" text-anchor="start" opacity="0.7">threshold</text>
+  <!-- Subtle horizontal guide lines inside chart -->
+  <line x1="55" y1="120" x2="390" y2="120" stroke="#e0e7ff" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="55" y1="155" x2="390" y2="155" stroke="#e0e7ff" stroke-width="1" stroke-dasharray="4 4"/>
 
-  <!-- Normal band -->
-  <rect x="40" y="185" width="560" height="40" rx="0" fill="#dbeafe" opacity="0.15"/>
-  <text x="50" y="196" font-family="Arial, sans-serif" font-size="7" fill="#93c5fd">normal range</text>
+  <!-- Filled area under normal line (subtle indigo fill) -->
+  <polygon
+    points="55,160 70,157 85,162 100,158 115,161 130,156 145,160 160,157 175,162 190,159 205,162 220,158 235,161 250,157 265,160 265,190 55,190"
+    fill="#4f46e5"
+    fill-opacity="0.06"
+  />
+  <polygon
+    points="322,161 336,159 350,162 364,158 378,161 390,159 390,190 322,190"
+    fill="#4f46e5"
+    fill-opacity="0.06"
+  />
 
-  <!-- Clock element (real-time indicator) -->
-  <g transform="translate(75, 310)">
-    <circle cx="0" cy="0" r="22" fill="#ffffff" stroke="#6366f1" stroke-width="2"/>
-    <circle cx="0" cy="0" r="18" fill="#eef2ff"/>
-    <!-- Clock hands -->
-    <line x1="0" y1="0" x2="0" y2="-12" stroke="#4f46e5" stroke-width="2" stroke-linecap="round"/>
-    <line x1="0" y1="0" x2="8" y2="-4" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round"/>
-    <circle cx="0" cy="0" r="2" fill="#4f46e5"/>
-    <!-- Hour markers -->
-    <circle cx="0" cy="-15" r="1" fill="#6366f1"/>
-    <circle cx="15" cy="0" r="1" fill="#6366f1"/>
-    <circle cx="0" cy="15" r="1" fill="#6366f1"/>
-    <circle cx="-15" cy="0" r="1" fill="#6366f1"/>
-  </g>
-  <text x="75" y="345" font-family="Arial, sans-serif" font-size="9" fill="#6366f1" text-anchor="middle" font-weight="600">Real-Time</text>
-  <text x="75" y="357" font-family="Arial, sans-serif" font-size="9" fill="#6366f1" text-anchor="middle" font-weight="600">Monitoring</text>
+  <!-- Filled area under spike (red glow) -->
+  <polygon
+    points="265,160 272,158 278,155 284,90 290,88 296,86 302,90 308,100 316,158 322,161 322,190 265,190"
+    fill="#ef4444"
+    fill-opacity="0.08"
+  />
 
-  <!-- Streaming data indicator (left side) -->
-  <g transform="translate(165, 305)">
-    <rect x="-35" y="-15" width="70" height="30" rx="6" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
-    <text x="0" y="-2" font-family="Arial, sans-serif" font-size="8" fill="#4f46e5" text-anchor="middle" font-weight="bold">STREAMING</text>
-    <text x="0" y="9" font-family="Arial, sans-serif" font-size="7" fill="#6366f1" text-anchor="middle">data feed</text>
-  </g>
+  <!-- Data stream heartbeat line: normal region -->
+  <polyline
+    points="55,160 70,157 85,162 100,158 115,161 130,156 145,160 160,157 175,162 190,159 205,162 220,158 235,161 250,157 265,160"
+    stroke="#4f46e5"
+    stroke-width="2.5"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+    fill="none"
+  />
 
-  <!-- Fraud detected label -->
-  <g transform="translate(350, 270)">
-    <rect x="-50" y="-12" width="100" height="24" rx="4" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
-    <text x="0" y="3" font-family="Arial, sans-serif" font-size="9" fill="#ef4444" text-anchor="middle" font-weight="bold">Anomaly Detected</text>
-  </g>
+  <!-- Anomaly spike region -->
+  <polyline
+    points="265,160 272,158 278,155 284,90 290,88 296,86 302,90 308,100 316,158 322,161"
+    stroke="#ef4444"
+    stroke-width="2.5"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+    fill="none"
+  />
 
-  <!-- Financial data symbols scattered along the stream -->
-  <text x="100" y="290" font-family="Arial, sans-serif" font-size="8" fill="#93c5fd">revenue</text>
-  <text x="200" y="275" font-family="Arial, sans-serif" font-size="8" fill="#93c5fd">accruals</text>
-  <text x="460" y="275" font-family="Arial, sans-serif" font-size="8" fill="#93c5fd">ratios</text>
-  <text x="530" y="290" font-family="Arial, sans-serif" font-size="8" fill="#93c5fd">cash flows</text>
+  <!-- Tail after anomaly: returning to normal -->
+  <polyline
+    points="322,161 336,159 350,162 364,158 378,161 390,159"
+    stroke="#4f46e5"
+    stroke-width="2.5"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+    fill="none"
+  />
 
-  <!-- Decorative -->
-  <circle cx="15" cy="385" r="3" fill="#dbeafe" opacity="0.5"/>
-  <circle cx="585" cy="15" r="3" fill="#dbeafe" opacity="0.5"/>
+  <!-- Alert beacon at spike peak (290, 88) -->
+  <!-- Outer pulse ring 1 -->
+  <circle cx="290" cy="88" r="22" fill="none" stroke="#ef4444" stroke-width="1.5" opacity="0.25"/>
+  <!-- Outer pulse ring 2 -->
+  <circle cx="290" cy="88" r="14" fill="none" stroke="#ef4444" stroke-width="1.8" opacity="0.45"/>
+  <!-- Inner alert circle -->
+  <circle cx="290" cy="88" r="7" fill="#ef4444" opacity="0.9"/>
+  <!-- Center dot -->
+  <circle cx="290" cy="88" r="3" fill="white"/>
+
+  <!-- Drop line from spike peak to x-axis -->
+  <line x1="290" y1="96" x2="290" y2="190" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.5"/>
+
+  <!-- Radar sweep arc (centered around alert point) -->
+  <path d="M290 88 L330 60 A42 42 0 0 0 290 46 Z" fill="#ef4444" fill-opacity="0.06"/>
+  <path d="M290 88 L330 60" stroke="#ef4444" stroke-width="1" opacity="0.3"/>
+  <path d="M290 46 A42 42 0 0 1 332 88" stroke="#ef4444" stroke-width="1" stroke-dasharray="3 3" fill="none" opacity="0.35"/>
+
+  <!-- Document icons feeding into the left of the stream -->
+  <!-- Doc 1 -->
+  <rect x="8" y="85" width="28" height="34" rx="3" fill="#e0e7ff" stroke="#818cf8" stroke-width="1.5"/>
+  <line x1="14" y1="95" x2="30" y2="95" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="101" x2="30" y2="101" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="107" x2="24" y2="107" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+  <polyline points="30,85 36,85 36,91 30,85" stroke="#818cf8" stroke-width="1.2" fill="#c7d2fe"/>
+  <line x1="36" y1="102" x2="50" y2="159" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.6"/>
+  <polygon points="50,159 45,151 55,153" fill="#818cf8" opacity="0.6"/>
+
+  <!-- Doc 2 -->
+  <rect x="8" y="140" width="28" height="34" rx="3" fill="#e0e7ff" stroke="#818cf8" stroke-width="1.5"/>
+  <line x1="14" y1="150" x2="30" y2="150" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="156" x2="30" y2="156" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="162" x2="24" y2="162" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+  <polyline points="30,140 36,140 36,146 30,140" stroke="#818cf8" stroke-width="1.2" fill="#c7d2fe"/>
+  <line x1="36" y1="157" x2="50" y2="160" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.6"/>
+  <polygon points="50,160 44,155 46,164" fill="#818cf8" opacity="0.6"/>
+
+  <!-- Doc 3 -->
+  <rect x="8" y="195" width="28" height="34" rx="3" fill="#e0e7ff" stroke="#818cf8" stroke-width="1.5"/>
+  <line x1="14" y1="205" x2="30" y2="205" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="211" x2="30" y2="211" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="14" y1="217" x2="24" y2="217" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+  <polyline points="30,195 36,195 36,201 30,195" stroke="#818cf8" stroke-width="1.2" fill="#c7d2fe"/>
+  <line x1="36" y1="207" x2="50" y2="185" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.6"/>
+  <polygon points="50,185 44,191 53,190" fill="#818cf8" opacity="0.6"/>
+
+  <!-- Bottom status bar -->
+  <rect x="30" y="258" width="380" height="30" rx="8" fill="white" stroke="#c7d2fe" stroke-width="1.5"/>
+
+  <!-- Live indicator dot -->
+  <circle cx="55" cy="273" r="7" fill="#4f46e5" fill-opacity="0.15"/>
+  <circle cx="55" cy="273" r="4" fill="#4f46e5"/>
+
+  <!-- Status bar mini bar charts -->
+  <rect x="80" y="267" width="6" height="12" rx="2" fill="#c7d2fe"/>
+  <rect x="90" y="269" width="6" height="10" rx="2" fill="#c7d2fe"/>
+  <rect x="100" y="265" width="6" height="14" rx="2" fill="#818cf8"/>
+  <rect x="110" y="268" width="6" height="11" rx="2" fill="#c7d2fe"/>
+  <rect x="120" y="264" width="6" height="15" rx="2" fill="#818cf8"/>
+  <rect x="130" y="270" width="6" height="9" rx="2" fill="#c7d2fe"/>
+
+  <!-- Separator -->
+  <line x1="148" y1="263" x2="148" y2="283" stroke="#e0e7ff" stroke-width="1.5"/>
+
+  <!-- Mini alert badge in status bar -->
+  <rect x="158" y="265" width="50" height="16" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.2"/>
+  <circle cx="168" cy="273" r="4" fill="#ef4444"/>
+  <rect x="177" y="269" width="22" height="3" rx="1.5" fill="#ef4444" fill-opacity="0.5"/>
+  <rect x="177" y="274" width="16" height="3" rx="1.5" fill="#ef4444" fill-opacity="0.35"/>
+
+  <!-- Separator -->
+  <line x1="220" y1="263" x2="220" y2="283" stroke="#e0e7ff" stroke-width="1.5"/>
+
+  <!-- Mini sparkline in status bar -->
+  <polyline
+    points="230,276 238,272 246,275 254,269 262,272 270,274 278,268 286,273"
+    stroke="#4f46e5"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+
+  <!-- Separator -->
+  <line x1="302" y1="263" x2="302" y2="283" stroke="#e0e7ff" stroke-width="1.5"/>
+
+  <!-- Right side status dots -->
+  <circle cx="320" cy="273" r="4" fill="#4f46e5" fill-opacity="0.4"/>
+  <circle cx="332" cy="273" r="4" fill="#4f46e5" fill-opacity="0.7"/>
+  <circle cx="344" cy="273" r="4" fill="#4f46e5"/>
+  <circle cx="356" cy="273" r="4" fill="#ef4444"/>
+  <circle cx="368" cy="273" r="4" fill="#4f46e5" fill-opacity="0.6"/>
+  <circle cx="380" cy="273" r="4" fill="#4f46e5" fill-opacity="0.3"/>
+
+  <!-- Top-right mini info panel inside monitor -->
+  <rect x="340" y="80" width="42" height="26" rx="5" fill="#e0e7ff" fill-opacity="0.5"/>
+  <line x1="346" y1="89" x2="376" y2="89" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="346" y1="95" x2="370" y2="95" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="346" y1="101" x2="374" y2="101" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Flowing arrow indicating left-to-right time direction -->
+  <line x1="55" y1="200" x2="385" y2="200" stroke="#c7d2fe" stroke-width="1.2"/>
+  <polygon points="390,200 382,196 382,204" fill="#c7d2fe"/>
+
+  <!-- Small tick marks on time axis -->
+  <line x1="100" y1="190" x2="100" y2="196" stroke="#c7d2fe" stroke-width="1.5"/>
+  <line x1="160" y1="190" x2="160" y2="196" stroke="#c7d2fe" stroke-width="1.5"/>
+  <line x1="220" y1="190" x2="220" y2="196" stroke="#c7d2fe" stroke-width="1.5"/>
+  <line x1="280" y1="190" x2="280" y2="196" stroke="#ef4444" stroke-width="1.5" opacity="0.6"/>
+  <line x1="340" y1="190" x2="340" y2="196" stroke="#c7d2fe" stroke-width="1.5"/>
 </svg>
