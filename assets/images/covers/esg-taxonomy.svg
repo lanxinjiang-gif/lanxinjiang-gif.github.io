@@ -1,140 +1,145 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
   <defs>
-    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f0f0ff;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#dbeafe;stop-opacity:1"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef2ff"/>
     </linearGradient>
-    <linearGradient id="indigo5" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#6366f1"/>
-      <stop offset="100%" style="stop-color:#4f46e5"/>
+    <linearGradient id="funnel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#6366f1"/>
     </linearGradient>
-    <linearGradient id="simplGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.15"/>
-      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0"/>
-    </linearGradient>
-    <filter id="shadow5" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#4f46e5" flood-opacity="0.12"/>
-    </filter>
-    <filter id="glow5" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
   </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
 
-  <!-- Background -->
-  <rect width="600" height="400" fill="url(#bg5)" rx="12"/>
-  <circle cx="150" cy="200" r="160" fill="#6366f1" opacity="0.025"/>
-  <circle cx="450" cy="200" r="160" fill="#6366f1" opacity="0.025"/>
+  <!-- Title -->
+  <text x="300" y="38" font-family="Arial, sans-serif" font-size="15" fill="#312e81" text-anchor="middle" font-weight="bold">ESG Taxonomy Simplification</text>
+  <text x="300" y="56" font-family="Arial, sans-serif" font-size="11" fill="#6366f1" text-anchor="middle">Complex Overlapping Categories → Text Mining → Clean E, S, G Columns</text>
 
-  <!-- LEFT SIDE: Complex tangled network -->
-  <g opacity="0.85">
-    <!-- Messy connection lines -->
-    <g stroke="#c7d2fe" stroke-width="1.2" fill="none" opacity="0.6">
-      <path d="M60,80 C100,120 80,180 130,150"/>
-      <path d="M40,160 C80,140 120,200 90,240"/>
-      <path d="M110,70 C150,110 100,150 160,180"/>
-      <path d="M70,280 C120,250 80,200 140,220"/>
-      <path d="M130,100 C90,150 150,170 120,250"/>
-      <path d="M50,220 C100,200 130,280 170,260"/>
-      <path d="M100,60 C60,120 140,130 110,200"/>
-      <path d="M40,300 C100,280 60,230 130,270"/>
-      <path d="M160,90 C130,130 170,200 140,160"/>
-      <path d="M80,340 C120,310 150,330 170,290"/>
-      <path d="M55,120 C95,180 65,250 115,300"/>
-      <path d="M170,130 C130,170 160,250 120,320"/>
-    </g>
+  <!-- LEFT: Messy cloud of overlapping labels -->
+  <g transform="translate(15, 70)">
+    <rect x="0" y="0" width="195" height="260" rx="8" fill="#fefce8" stroke="#fde68a" stroke-width="1.5" opacity="0.5"/>
+    <text x="97" y="22" font-family="Arial, sans-serif" font-size="10" fill="#92400e" text-anchor="middle" font-weight="bold">Complex Taxonomy</text>
+    <text x="97" y="35" font-family="Arial, sans-serif" font-size="8" fill="#b45309" text-anchor="middle">Overlapping classifications</text>
 
-    <!-- Scattered nodes (chaotic) -->
-    <circle cx="60" cy="80" r="10" fill="#c7d2fe" stroke="#a5b4fc" stroke-width="1.5"/>
-    <circle cx="110" cy="70" r="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
-    <circle cx="40" cy="160" r="9" fill="#c7d2fe" stroke="#a5b4fc" stroke-width="1.5"/>
-    <circle cx="130" cy="150" r="7" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
-    <circle cx="160" cy="90" r="8" fill="#c7d2fe" stroke="#a5b4fc" stroke-width="1.5"/>
-    <circle cx="90" cy="120" r="6" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1"/>
-    <circle cx="70" cy="220" r="9" fill="#c7d2fe" stroke="#a5b4fc" stroke-width="1.5"/>
-    <circle cx="130" cy="250" r="7" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
-    <circle cx="50" cy="280" r="8" fill="#c7d2fe" stroke="#a5b4fc" stroke-width="1.5"/>
-    <circle cx="140" cy="300" r="6" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1"/>
-    <circle cx="100" cy="200" r="10" fill="#c7d2fe" stroke="#a5b4fc" stroke-width="1.5"/>
-    <circle cx="170" cy="180" r="7" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
-    <circle cx="80" cy="320" r="8" fill="#c7d2fe" stroke="#a5b4fc" stroke-width="1.5"/>
-    <circle cx="160" cy="260" r="6" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1"/>
-    <circle cx="50" cy="340" r="7" fill="#c7d2fe" stroke="#a5b4fc" stroke-width="1.5"/>
-    <circle cx="170" cy="330" r="5" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+    <!-- Scattered, overlapping, rotated labels -->
+    <rect x="10" y="48" width="80" height="20" rx="3" fill="#dbeafe" stroke="#93c5fd" stroke-width="1" transform="rotate(-5 50 58)" opacity="0.8"/>
+    <text x="50" y="62" font-family="Arial, sans-serif" font-size="7" fill="#1e40af" text-anchor="middle" transform="rotate(-5 50 62)">Climate Risk</text>
+
+    <rect x="60" y="55" width="95" height="20" rx="3" fill="#dcfce7" stroke="#86efac" stroke-width="1" transform="rotate(3 107 65)" opacity="0.8"/>
+    <text x="107" y="69" font-family="Arial, sans-serif" font-size="7" fill="#166534" text-anchor="middle" transform="rotate(3 107 69)">Carbon Emissions</text>
+
+    <rect x="20" y="78" width="70" height="20" rx="3" fill="#fce7f3" stroke="#f9a8d4" stroke-width="1" transform="rotate(-8 55 88)" opacity="0.8"/>
+    <text x="55" y="92" font-family="Arial, sans-serif" font-size="7" fill="#9d174d" text-anchor="middle" transform="rotate(-8 55 92)">Diversity</text>
+
+    <rect x="85" y="82" width="90" height="20" rx="3" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1" transform="rotate(6 130 92)" opacity="0.8"/>
+    <text x="130" y="96" font-family="Arial, sans-serif" font-size="7" fill="#3730a3" text-anchor="middle" transform="rotate(6 130 96)">Board Structure</text>
+
+    <rect x="5" y="108" width="85" height="20" rx="3" fill="#dcfce7" stroke="#86efac" stroke-width="1" transform="rotate(4 47 118)" opacity="0.8"/>
+    <text x="47" y="122" font-family="Arial, sans-serif" font-size="7" fill="#166534" text-anchor="middle" transform="rotate(4 47 122)">Water Usage</text>
+
+    <rect x="70" y="112" width="105" height="20" rx="3" fill="#fce7f3" stroke="#f9a8d4" stroke-width="1" transform="rotate(-3 122 122)" opacity="0.8"/>
+    <text x="122" y="126" font-family="Arial, sans-serif" font-size="7" fill="#9d174d" text-anchor="middle" transform="rotate(-3 122 126)">Labor Practices</text>
+
+    <rect x="15" y="140" width="95" height="20" rx="3" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1" transform="rotate(7 62 150)" opacity="0.8"/>
+    <text x="62" y="154" font-family="Arial, sans-serif" font-size="7" fill="#3730a3" text-anchor="middle" transform="rotate(7 62 154)">Anti-Corruption</text>
+
+    <rect x="95" y="138" width="80" height="20" rx="3" fill="#dbeafe" stroke="#93c5fd" stroke-width="1" transform="rotate(-6 135 148)" opacity="0.8"/>
+    <text x="135" y="152" font-family="Arial, sans-serif" font-size="7" fill="#1e40af" text-anchor="middle" transform="rotate(-6 135 152)">Biodiversity</text>
+
+    <rect x="8" y="168" width="80" height="20" rx="3" fill="#fce7f3" stroke="#f9a8d4" stroke-width="1" transform="rotate(-2 48 178)" opacity="0.8"/>
+    <text x="48" y="182" font-family="Arial, sans-serif" font-size="7" fill="#9d174d" text-anchor="middle" transform="rotate(-2 48 182)">Human Rights</text>
+
+    <rect x="75" y="170" width="100" height="20" rx="3" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1" transform="rotate(5 125 180)" opacity="0.8"/>
+    <text x="125" y="184" font-family="Arial, sans-serif" font-size="7" fill="#3730a3" text-anchor="middle" transform="rotate(5 125 184)">Risk Management</text>
+
+    <rect x="20" y="198" width="75" height="20" rx="3" fill="#dcfce7" stroke="#86efac" stroke-width="1" transform="rotate(-4 57 208)" opacity="0.8"/>
+    <text x="57" y="212" font-family="Arial, sans-serif" font-size="7" fill="#166534" text-anchor="middle" transform="rotate(-4 57 212)">Pollution</text>
+
+    <rect x="90" y="200" width="85" height="20" rx="3" fill="#fef3c7" stroke="#fbbf24" stroke-width="1" transform="rotate(2 132 210)" opacity="0.8"/>
+    <text x="132" y="214" font-family="Arial, sans-serif" font-size="7" fill="#92400e" text-anchor="middle" transform="rotate(2 132 214)">Supply Chain</text>
+
+    <rect x="30" y="228" width="65" height="20" rx="3" fill="#dbeafe" stroke="#93c5fd" stroke-width="1" transform="rotate(6 62 238)" opacity="0.8"/>
+    <text x="62" y="242" font-family="Arial, sans-serif" font-size="7" fill="#1e40af" text-anchor="middle" transform="rotate(6 62 242)">Energy</text>
+
+    <rect x="100" y="230" width="80" height="20" rx="3" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1" transform="rotate(-3 140 240)" opacity="0.8"/>
+    <text x="140" y="244" font-family="Arial, sans-serif" font-size="7" fill="#3730a3" text-anchor="middle" transform="rotate(-3 140 244)">Transparency</text>
   </g>
 
-  <!-- CENTER: Transformation arrow -->
-  <g transform="translate(250, 175)">
-    <!-- Arrow body -->
-    <rect x="0" y="-20" width="90" height="40" rx="8" fill="url(#indigo5)" opacity="0.15"/>
-    <g filter="url(#glow5)">
-      <!-- Arrow shape -->
-      <polygon points="30,-12 70,-12 70,-20 95,0 70,20 70,12 30,12" fill="url(#indigo5)" opacity="0.7"/>
-    </g>
-    <!-- Sparkle dots on arrow -->
-    <circle cx="45" cy="-5" r="2" fill="#f59e0b" opacity="0.8"/>
-    <circle cx="55" cy="5" r="2" fill="#f59e0b" opacity="0.6"/>
-    <circle cx="65" cy="-3" r="1.5" fill="#f59e0b" opacity="0.7"/>
+  <!-- CENTER: Funnel/arrow labeled "Text Mining" -->
+  <g transform="translate(218, 130)">
+    <!-- Funnel shape -->
+    <polygon points="0,10 0,130 35,105 35,35" fill="url(#funnel)" opacity="0.15"/>
+    <polygon points="35,35 35,105 70,90 70,50" fill="url(#funnel)" opacity="0.3"/>
+    <rect x="70" y="50" width="50" height="40" rx="4" fill="url(#funnel)"/>
+    <text x="95" y="68" font-family="Arial, sans-serif" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">Text</text>
+    <text x="95" y="80" font-family="Arial, sans-serif" font-size="9" fill="#ffffff" text-anchor="middle" font-weight="bold">Mining</text>
+    <!-- Arrow out -->
+    <polygon points="120,60 120,80 140,70" fill="#6366f1"/>
+  </g>
+  <text x="280" y="295" font-family="Arial, sans-serif" font-size="9" fill="#4f46e5" text-anchor="middle" font-weight="600">NLP + Clustering</text>
+  <text x="280" y="308" font-family="Arial, sans-serif" font-size="8" fill="#6366f1" text-anchor="middle">Hybrid Approach</text>
+
+  <!-- RIGHT: Clean organized E, S, G columns -->
+  <g transform="translate(370, 70)">
+    <rect x="0" y="0" width="205" height="260" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="102" y="22" font-family="Arial, sans-serif" font-size="10" fill="#4f46e5" text-anchor="middle" font-weight="bold">Simplified Taxonomy</text>
+
+    <!-- E Column -->
+    <rect x="10" y="35" width="58" height="25" rx="4" fill="#22c55e"/>
+    <text x="39" y="52" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">E</text>
+    <rect x="10" y="65" width="58" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.8"/>
+    <text x="39" y="78" font-family="Arial, sans-serif" font-size="7" fill="#166534" text-anchor="middle">Climate</text>
+    <rect x="10" y="87" width="58" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.8"/>
+    <text x="39" y="100" font-family="Arial, sans-serif" font-size="7" fill="#166534" text-anchor="middle">Carbon</text>
+    <rect x="10" y="109" width="58" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.8"/>
+    <text x="39" y="122" font-family="Arial, sans-serif" font-size="7" fill="#166534" text-anchor="middle">Water</text>
+    <rect x="10" y="131" width="58" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.8"/>
+    <text x="39" y="144" font-family="Arial, sans-serif" font-size="7" fill="#166534" text-anchor="middle">Biodiversity</text>
+    <rect x="10" y="153" width="58" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.8"/>
+    <text x="39" y="166" font-family="Arial, sans-serif" font-size="7" fill="#166534" text-anchor="middle">Pollution</text>
+    <rect x="10" y="175" width="58" height="18" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="0.8"/>
+    <text x="39" y="188" font-family="Arial, sans-serif" font-size="7" fill="#166534" text-anchor="middle">Energy</text>
+
+    <!-- S Column -->
+    <rect x="74" y="35" width="58" height="25" rx="4" fill="#f59e0b"/>
+    <text x="103" y="52" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">S</text>
+    <rect x="74" y="65" width="58" height="18" rx="3" fill="#fffbeb" stroke="#fbbf24" stroke-width="0.8"/>
+    <text x="103" y="78" font-family="Arial, sans-serif" font-size="7" fill="#92400e" text-anchor="middle">Diversity</text>
+    <rect x="74" y="87" width="58" height="18" rx="3" fill="#fffbeb" stroke="#fbbf24" stroke-width="0.8"/>
+    <text x="103" y="100" font-family="Arial, sans-serif" font-size="7" fill="#92400e" text-anchor="middle">Labor</text>
+    <rect x="74" y="109" width="58" height="18" rx="3" fill="#fffbeb" stroke="#fbbf24" stroke-width="0.8"/>
+    <text x="103" y="122" font-family="Arial, sans-serif" font-size="7" fill="#92400e" text-anchor="middle">Human Rights</text>
+    <rect x="74" y="131" width="58" height="18" rx="3" fill="#fffbeb" stroke="#fbbf24" stroke-width="0.8"/>
+    <text x="103" y="144" font-family="Arial, sans-serif" font-size="7" fill="#92400e" text-anchor="middle">Supply Chain</text>
+    <rect x="74" y="153" width="58" height="18" rx="3" fill="#fffbeb" stroke="#fbbf24" stroke-width="0.8"/>
+    <text x="103" y="166" font-family="Arial, sans-serif" font-size="7" fill="#92400e" text-anchor="middle">Community</text>
+
+    <!-- G Column -->
+    <rect x="138" y="35" width="58" height="25" rx="4" fill="#4f46e5"/>
+    <text x="167" y="52" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">G</text>
+    <rect x="138" y="65" width="58" height="18" rx="3" fill="#eef2ff" stroke="#a5b4fc" stroke-width="0.8"/>
+    <text x="167" y="78" font-family="Arial, sans-serif" font-size="7" fill="#3730a3" text-anchor="middle">Board</text>
+    <rect x="138" y="87" width="58" height="18" rx="3" fill="#eef2ff" stroke="#a5b4fc" stroke-width="0.8"/>
+    <text x="167" y="100" font-family="Arial, sans-serif" font-size="7" fill="#3730a3" text-anchor="middle">Anti-Corruption</text>
+    <rect x="138" y="109" width="58" height="18" rx="3" fill="#eef2ff" stroke="#a5b4fc" stroke-width="0.8"/>
+    <text x="167" y="122" font-family="Arial, sans-serif" font-size="7" fill="#3730a3" text-anchor="middle">Risk Mgmt</text>
+    <rect x="138" y="131" width="58" height="18" rx="3" fill="#eef2ff" stroke="#a5b4fc" stroke-width="0.8"/>
+    <text x="167" y="144" font-family="Arial, sans-serif" font-size="7" fill="#3730a3" text-anchor="middle">Transparency</text>
+    <rect x="138" y="153" width="58" height="18" rx="3" fill="#eef2ff" stroke="#a5b4fc" stroke-width="0.8"/>
+    <text x="167" y="166" font-family="Arial, sans-serif" font-size="7" fill="#3730a3" text-anchor="middle">Ethics</text>
+
+    <!-- Neat lines separating columns -->
+    <line x1="70" y1="35" x2="70" y2="200" stroke="#e0e7ff" stroke-width="1" stroke-dasharray="3,2"/>
+    <line x1="134" y1="35" x2="134" y2="200" stroke="#e0e7ff" stroke-width="1" stroke-dasharray="3,2"/>
+
+    <text x="102" y="220" font-family="Arial, sans-serif" font-size="8" fill="#6366f1" text-anchor="middle">Clean, non-overlapping</text>
+    <text x="102" y="232" font-family="Arial, sans-serif" font-size="8" fill="#6366f1" text-anchor="middle">classification system</text>
   </g>
 
-  <!-- RIGHT SIDE: Clean organized categories -->
-  <g filter="url(#shadow5)">
-    <!-- Category E (Environmental) -->
-    <g transform="translate(380, 55)">
-      <rect width="180" height="75" rx="12" fill="white" stroke="#10b981" stroke-width="2"/>
-      <!-- Green circle badge -->
-      <circle cx="30" cy="37" r="16" fill="#10b981" opacity="0.15"/>
-      <circle cx="30" cy="37" r="10" fill="#10b981"/>
-      <!-- Leaf inside -->
-      <ellipse cx="30" cy="35" rx="5" ry="7" fill="#fff" transform="rotate(-20, 30, 35)" opacity="0.9"/>
-      <!-- Lines -->
-      <rect x="55" y="22" width="100" height="7" rx="3.5" fill="#d1fae5"/>
-      <rect x="55" y="37" width="75" height="7" rx="3.5" fill="#d1fae5"/>
-      <rect x="55" y="52" width="90" height="7" rx="3.5" fill="#ecfdf5"/>
-    </g>
+  <!-- Bottom -->
+  <text x="300" y="360" font-family="Arial, sans-serif" font-size="10" fill="#4f46e5" text-anchor="middle" font-weight="600">Hybrid text mining reduces taxonomy complexity</text>
+  <text x="300" y="378" font-family="Arial, sans-serif" font-size="9" fill="#93c5fd" text-anchor="middle">From hundreds of overlapping labels to clear E, S, G categories</text>
 
-    <!-- Category S (Social) -->
-    <g transform="translate(380, 155)">
-      <rect width="180" height="75" rx="12" fill="white" stroke="#6366f1" stroke-width="2"/>
-      <!-- Purple circle badge -->
-      <circle cx="30" cy="37" r="16" fill="#6366f1" opacity="0.15"/>
-      <circle cx="30" cy="37" r="10" fill="#6366f1"/>
-      <!-- People icon inside -->
-      <circle cx="27" cy="33" r="3" fill="#fff"/>
-      <circle cx="33" cy="33" r="3" fill="#fff"/>
-      <path d="M22,42 C22,38 27,36 30,36 C33,36 38,38 38,42" fill="#fff" opacity="0.8"/>
-      <!-- Lines -->
-      <rect x="55" y="22" width="100" height="7" rx="3.5" fill="#e0e7ff"/>
-      <rect x="55" y="37" width="80" height="7" rx="3.5" fill="#e0e7ff"/>
-      <rect x="55" y="52" width="95" height="7" rx="3.5" fill="#eef2ff"/>
-    </g>
-
-    <!-- Category G (Governance) -->
-    <g transform="translate(380, 255)">
-      <rect width="180" height="75" rx="12" fill="white" stroke="#f59e0b" stroke-width="2"/>
-      <!-- Amber circle badge -->
-      <circle cx="30" cy="37" r="16" fill="#f59e0b" opacity="0.15"/>
-      <circle cx="30" cy="37" r="10" fill="#f59e0b"/>
-      <!-- Scale/balance icon inside -->
-      <line x1="30" y1="30" x2="30" y2="43" stroke="#fff" stroke-width="2"/>
-      <line x1="22" y1="34" x2="38" y2="34" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="22" cy="37" r="2.5" fill="#fff" opacity="0.8"/>
-      <circle cx="38" cy="37" r="2.5" fill="#fff" opacity="0.8"/>
-      <!-- Lines -->
-      <rect x="55" y="22" width="100" height="7" rx="3.5" fill="#fef3c7"/>
-      <rect x="55" y="37" width="70" height="7" rx="3.5" fill="#fef3c7"/>
-      <rect x="55" y="52" width="88" height="7" rx="3.5" fill="#fffbeb"/>
-    </g>
-  </g>
-
-  <!-- Subtle connection lines from arrow to categories -->
-  <path d="M345,175 C360,175 370,92 380,92" stroke="#6366f1" stroke-width="1" fill="none" opacity="0.3"/>
-  <path d="M345,175 C360,175 370,192 380,192" stroke="#6366f1" stroke-width="1.5" fill="none" opacity="0.4"/>
-  <path d="M345,175 C360,175 370,292 380,292" stroke="#6366f1" stroke-width="1" fill="none" opacity="0.3"/>
-
-  <!-- Floating decorative elements -->
-  <circle cx="300" cy="40" r="3" fill="#93c5fd" opacity="0.5"/>
-  <circle cx="300" cy="370" r="3" fill="#93c5fd" opacity="0.5"/>
-  <circle cx="580" cy="380" r="2" fill="#c7d2fe" opacity="0.4"/>
-  <circle cx="20" cy="30" r="2" fill="#c7d2fe" opacity="0.4"/>
+  <circle cx="15" cy="385" r="3" fill="#dbeafe" opacity="0.5"/>
+  <circle cx="585" cy="15" r="3" fill="#dbeafe" opacity="0.5"/>
 </svg>

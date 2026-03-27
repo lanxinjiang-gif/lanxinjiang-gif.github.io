@@ -1,136 +1,117 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
   <defs>
-    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f0f0ff;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#dbeafe;stop-opacity:1"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#eef2ff"/>
     </linearGradient>
-    <linearGradient id="card" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff"/>
-      <stop offset="100%" style="stop-color:#f8faff"/>
+    <linearGradient id="alertGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
     </linearGradient>
-    <linearGradient id="indigo2" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#6366f1"/>
-      <stop offset="100%" style="stop-color:#4f46e5"/>
-    </linearGradient>
-    <linearGradient id="amber" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#fbbf24"/>
-      <stop offset="100%" style="stop-color:#f59e0b"/>
-    </linearGradient>
-    <filter id="shadow2" x="-5%" y="-5%" width="115%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#4f46e5" flood-opacity="0.12"/>
-    </filter>
-    <filter id="glow2" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <clipPath id="chartClip">
-      <rect x="45" y="50" width="250" height="160"/>
-    </clipPath>
   </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
 
-  <!-- Background -->
-  <rect width="600" height="400" fill="url(#bg2)" rx="12"/>
+  <!-- Title -->
+  <text x="300" y="38" font-family="Arial, sans-serif" font-size="15" fill="#312e81" text-anchor="middle" font-weight="bold">Real-Time Financial Statement Fraud Detection</text>
+  <text x="300" y="56" font-family="Arial, sans-serif" font-size="11" fill="#6366f1" text-anchor="middle">Streaming Financial Data → Anomaly Detection → Real-Time Alert</text>
+
+  <!-- Timeline base line -->
+  <line x1="40" y1="230" x2="560" y2="230" stroke="#c7d2fe" stroke-width="2"/>
+  <!-- Time markers -->
+  <line x1="70" y1="225" x2="70" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
+  <text x="70" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q1</text>
+  <line x1="160" y1="225" x2="160" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
+  <text x="160" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q2</text>
+  <line x1="250" y1="225" x2="250" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
+  <text x="250" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q3</text>
+  <line x1="340" y1="225" x2="340" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
+  <text x="340" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q4</text>
+  <line x1="430" y1="225" x2="430" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
+  <text x="430" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q5</text>
+  <line x1="520" y1="225" x2="520" y2="235" stroke="#a5b4fc" stroke-width="1.5"/>
+  <text x="520" y="250" font-family="Arial, sans-serif" font-size="8" fill="#a5b4fc" text-anchor="middle">Q6</text>
+
+  <!-- Normal data stream (line chart) -->
+  <polyline points="50,210 70,205 90,212 110,200 130,208 150,195 170,202 190,198 210,205 230,192 250,200 270,196 290,202 310,198" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Data dots on normal range -->
+  <circle cx="70" cy="205" r="3" fill="#6366f1"/>
+  <circle cx="130" cy="208" r="3" fill="#6366f1"/>
+  <circle cx="190" cy="198" r="3" fill="#6366f1"/>
+  <circle cx="250" cy="200" r="3" fill="#6366f1"/>
+
+  <!-- Anomaly spike area -->
+  <polyline points="310,198 320,190 330,175 340,130 350,108 355,95 360,110 370,140 380,170 390,195 400,205 420,210 440,208 460,205 480,210 500,207 520,212 540,208 555,210" fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Anomaly spike highlight -->
+  <polyline points="320,190 330,175 340,130 350,108 355,95 360,110 370,140 380,170" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Red anomaly dots -->
+  <circle cx="340" cy="130" r="4" fill="#ef4444"/>
+  <circle cx="355" cy="95" r="5" fill="#ef4444"/>
+  <circle cx="350" cy="108" r="4" fill="#ef4444"/>
+
+  <!-- Anomaly zone highlight -->
+  <rect x="315" y="80" width="70" height="160" rx="4" fill="#fef2f2" opacity="0.35" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Alert icon pointing to anomaly -->
+  <!-- Bell/alarm -->
+  <g transform="translate(355, 72)">
+    <circle cx="0" cy="-18" r="16" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+    <!-- Bell shape -->
+    <path d="M-7,-22 C-7,-28 7,-28 7,-22 L8,-16 C8,-14 -8,-14 -8,-16 Z" fill="#f59e0b"/>
+    <rect x="-3" y="-14" width="6" height="3" rx="1.5" fill="#f59e0b"/>
+    <circle cx="0" cy="-26" r="1.5" fill="#f59e0b"/>
+    <!-- Exclamation -->
+    <text x="0" y="-16" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="bold">!</text>
+  </g>
+  <!-- Alert label -->
+  <rect x="395" y="78" width="90" height="30" rx="6" fill="#f59e0b"/>
+  <text x="440" y="97" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">ALERT!</text>
+  <line x1="385" y1="93" x2="395" y2="93" stroke="#f59e0b" stroke-width="2"/>
+
+  <!-- Threshold line (dashed) -->
+  <line x1="40" y1="160" x2="560" y2="160" stroke="#ef4444" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+  <text x="565" y="163" font-family="Arial, sans-serif" font-size="8" fill="#ef4444" text-anchor="start" opacity="0.7">threshold</text>
+
+  <!-- Normal band -->
+  <rect x="40" y="185" width="560" height="40" rx="0" fill="#dbeafe" opacity="0.15"/>
+  <text x="50" y="196" font-family="Arial, sans-serif" font-size="7" fill="#93c5fd">normal range</text>
+
+  <!-- Clock element (real-time indicator) -->
+  <g transform="translate(75, 310)">
+    <circle cx="0" cy="0" r="22" fill="#ffffff" stroke="#6366f1" stroke-width="2"/>
+    <circle cx="0" cy="0" r="18" fill="#eef2ff"/>
+    <!-- Clock hands -->
+    <line x1="0" y1="0" x2="0" y2="-12" stroke="#4f46e5" stroke-width="2" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="8" y2="-4" stroke="#4f46e5" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="2" fill="#4f46e5"/>
+    <!-- Hour markers -->
+    <circle cx="0" cy="-15" r="1" fill="#6366f1"/>
+    <circle cx="15" cy="0" r="1" fill="#6366f1"/>
+    <circle cx="0" cy="15" r="1" fill="#6366f1"/>
+    <circle cx="-15" cy="0" r="1" fill="#6366f1"/>
+  </g>
+  <text x="75" y="345" font-family="Arial, sans-serif" font-size="9" fill="#6366f1" text-anchor="middle" font-weight="600">Real-Time</text>
+  <text x="75" y="357" font-family="Arial, sans-serif" font-size="9" fill="#6366f1" text-anchor="middle" font-weight="600">Monitoring</text>
+
+  <!-- Streaming data indicator (left side) -->
+  <g transform="translate(165, 305)">
+    <rect x="-35" y="-15" width="70" height="30" rx="6" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="0" y="-2" font-family="Arial, sans-serif" font-size="8" fill="#4f46e5" text-anchor="middle" font-weight="bold">STREAMING</text>
+    <text x="0" y="9" font-family="Arial, sans-serif" font-size="7" fill="#6366f1" text-anchor="middle">data feed</text>
+  </g>
+
+  <!-- Fraud detected label -->
+  <g transform="translate(350, 270)">
+    <rect x="-50" y="-12" width="100" height="24" rx="4" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="0" y="3" font-family="Arial, sans-serif" font-size="9" fill="#ef4444" text-anchor="middle" font-weight="bold">Anomaly Detected</text>
+  </g>
+
+  <!-- Financial data symbols scattered along the stream -->
+  <text x="100" y="290" font-family="Arial, sans-serif" font-size="8" fill="#93c5fd">revenue</text>
+  <text x="200" y="275" font-family="Arial, sans-serif" font-size="8" fill="#93c5fd">accruals</text>
+  <text x="460" y="275" font-family="Arial, sans-serif" font-size="8" fill="#93c5fd">ratios</text>
+  <text x="530" y="290" font-family="Arial, sans-serif" font-size="8" fill="#93c5fd">cash flows</text>
 
   <!-- Decorative -->
-  <circle cx="580" cy="30" r="60" fill="#6366f1" opacity="0.04"/>
-  <circle cx="20" cy="380" r="70" fill="#6366f1" opacity="0.04"/>
-
-  <!-- Main dashboard panel -->
-  <g filter="url(#shadow2)">
-    <rect x="30" y="35" width="280" height="200" rx="12" fill="url(#card)" stroke="#e0e7ff" stroke-width="1"/>
-  </g>
-
-  <!-- Dashboard header bar -->
-  <rect x="30" y="35" width="280" height="32" rx="12" fill="url(#indigo2)"/>
-  <rect x="30" y="55" width="280" height="12" fill="#4f46e5"/>
-  <!-- Dots on header -->
-  <circle cx="50" cy="51" r="4" fill="#fff" opacity="0.5"/>
-  <circle cx="62" cy="51" r="4" fill="#fff" opacity="0.5"/>
-  <circle cx="74" cy="51" r="4" fill="#fff" opacity="0.5"/>
-
-  <!-- Line chart -->
-  <g clip-path="url(#chartClip)">
-    <polyline points="55,180 85,170 115,175 145,140 175,155 205,120 225,130 255,95 275,80"
-              fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- Area under line -->
-    <polygon points="55,180 85,170 115,175 145,140 175,155 205,120 225,130 255,95 275,80 275,210 55,210"
-             fill="#6366f1" opacity="0.08"/>
-    <!-- Anomaly spike -->
-    <polyline points="225,130 240,75 255,95"
-              fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-
-  <!-- Chart grid lines -->
-  <g stroke="#e0e7ff" stroke-width="0.5">
-    <line x1="50" y1="100" x2="290" y2="100"/>
-    <line x1="50" y1="140" x2="290" y2="140"/>
-    <line x1="50" y1="180" x2="290" y2="180"/>
-  </g>
-
-  <!-- Anomaly alert dot -->
-  <circle cx="240" cy="75" r="6" fill="#f59e0b" filter="url(#glow2)"/>
-  <circle cx="240" cy="75" r="10" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.4"/>
-  <circle cx="240" cy="75" r="16" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.2"/>
-
-  <!-- Side panel - bar chart -->
-  <g filter="url(#shadow2)">
-    <rect x="325" y="35" width="245" height="130" rx="12" fill="url(#card)" stroke="#e0e7ff" stroke-width="1"/>
-  </g>
-  <!-- Mini bars -->
-  <rect x="350" y="105" width="22" height="40" rx="4" fill="#c7d2fe"/>
-  <rect x="380" y="90" width="22" height="55" rx="4" fill="#c7d2fe"/>
-  <rect x="410" y="75" width="22" height="70" rx="4" fill="#6366f1"/>
-  <rect x="440" y="95" width="22" height="50" rx="4" fill="#c7d2fe"/>
-  <rect x="470" y="60" width="22" height="85" rx="4" fill="#f59e0b"/>
-  <rect x="500" y="85" width="22" height="60" rx="4" fill="#c7d2fe"/>
-  <rect x="530" y="100" width="22" height="45" rx="4" fill="#c7d2fe"/>
-
-  <!-- Magnifying glass -->
-  <g transform="translate(400, 280)" filter="url(#shadow2)">
-    <circle cx="0" cy="0" r="45" fill="white" stroke="#4f46e5" stroke-width="4" opacity="0.95"/>
-    <circle cx="0" cy="0" r="38" fill="none" stroke="#c7d2fe" stroke-width="1.5"/>
-    <!-- Handle -->
-    <line x1="32" y1="32" x2="60" y2="60" stroke="#4f46e5" stroke-width="6" stroke-linecap="round"/>
-    <!-- Mini chart inside magnifying glass -->
-    <polyline points="-20,8 -10,0 0,5 10,-12 20,-5" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="10" cy="-12" r="3" fill="#f59e0b"/>
-  </g>
-
-  <!-- Alert signals / badges -->
-  <g transform="translate(160, 290)" filter="url(#glow2)">
-    <rect x="-40" y="-18" width="80" height="36" rx="18" fill="url(#amber)"/>
-    <!-- Bell icon -->
-    <path d="M-8,-8 C-8,-14 8,-14 8,-8 L8,0 C8,4 10,6 12,8 L-12,8 C-10,6 -8,4 -8,0 Z" fill="#fff"/>
-    <circle cx="0" cy="11" r="3" fill="#fff"/>
-  </g>
-
-  <!-- Small status cards bottom left -->
-  <g filter="url(#shadow2)">
-    <rect x="30" y="260" width="90" height="60" rx="8" fill="url(#card)" stroke="#e0e7ff" stroke-width="1"/>
-    <circle cx="55" cy="283" r="8" fill="#10b981"/>
-    <rect x="70" y="279" width="35" height="6" rx="3" fill="#c7d2fe"/>
-    <rect x="48" y="300" width="55" height="5" rx="2.5" fill="#e0e7ff"/>
-  </g>
-
-  <g filter="url(#shadow2)">
-    <rect x="30" y="330" width="90" height="60" rx="8" fill="url(#card)" stroke="#e0e7ff" stroke-width="1"/>
-    <circle cx="55" cy="353" r="8" fill="#f59e0b"/>
-    <rect x="70" y="349" width="35" height="6" rx="3" fill="#c7d2fe"/>
-    <rect x="48" y="370" width="55" height="5" rx="2.5" fill="#e0e7ff"/>
-  </g>
-
-  <!-- Second bottom panel -->
-  <g filter="url(#shadow2)">
-    <rect x="325" y="180" width="245" height="55" rx="10" fill="url(#card)" stroke="#e0e7ff" stroke-width="1"/>
-    <!-- Progress bar -->
-    <rect x="345" y="200" width="200" height="8" rx="4" fill="#e0e7ff"/>
-    <rect x="345" y="200" width="140" height="8" rx="4" fill="url(#indigo2)"/>
-    <circle cx="485" cy="204" r="5" fill="#f59e0b"/>
-  </g>
-
-  <!-- Floating data points -->
-  <circle cx="180" cy="30" r="3" fill="#93c5fd" opacity="0.5"/>
-  <circle cx="320" cy="20" r="2" fill="#6366f1" opacity="0.4"/>
-  <circle cx="520" cy="370" r="3" fill="#93c5fd" opacity="0.5"/>
-  <circle cx="280" cy="370" r="2" fill="#c7d2fe" opacity="0.6"/>
+  <circle cx="15" cy="385" r="3" fill="#dbeafe" opacity="0.5"/>
+  <circle cx="585" cy="15" r="3" fill="#dbeafe" opacity="0.5"/>
 </svg>
