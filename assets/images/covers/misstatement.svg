@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f0ff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#dbeafe;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="indigo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="doc" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#e0e7ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#4f46e5" flood-opacity="0.15"/>
+    </filter>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bg)" rx="12"/>
+
+  <!-- Decorative circles -->
+  <circle cx="50" cy="50" r="80" fill="#6366f1" opacity="0.05"/>
+  <circle cx="550" cy="350" r="100" fill="#6366f1" opacity="0.05"/>
+  <circle cx="300" cy="200" r="160" fill="#4f46e5" opacity="0.03"/>
+
+  <!-- Neural network nodes - left cluster -->
+  <g filter="url(#shadow)">
+    <!-- Input layer -->
+    <circle cx="100" cy="120" r="16" fill="url(#indigo)" opacity="0.9"/>
+    <circle cx="100" cy="180" r="16" fill="url(#indigo)" opacity="0.9"/>
+    <circle cx="100" cy="240" r="16" fill="url(#indigo)" opacity="0.9"/>
+    <circle cx="100" cy="300" r="16" fill="url(#indigo)" opacity="0.9"/>
+
+    <!-- Hidden layer 1 -->
+    <circle cx="210" cy="145" r="14" fill="#6366f1" opacity="0.8"/>
+    <circle cx="210" cy="210" r="14" fill="#6366f1" opacity="0.8"/>
+    <circle cx="210" cy="275" r="14" fill="#6366f1" opacity="0.8"/>
+
+    <!-- Hidden layer 2 -->
+    <circle cx="310" cy="170" r="14" fill="#6366f1" opacity="0.7"/>
+    <circle cx="310" cy="245" r="14" fill="#6366f1" opacity="0.7"/>
+  </g>
+
+  <!-- Connections - input to hidden 1 -->
+  <g stroke="#6366f1" stroke-width="1.5" opacity="0.25">
+    <line x1="116" y1="120" x2="196" y2="145"/>
+    <line x1="116" y1="120" x2="196" y2="210"/>
+    <line x1="116" y1="120" x2="196" y2="275"/>
+    <line x1="116" y1="180" x2="196" y2="145"/>
+    <line x1="116" y1="180" x2="196" y2="210"/>
+    <line x1="116" y1="180" x2="196" y2="275"/>
+    <line x1="116" y1="240" x2="196" y2="145"/>
+    <line x1="116" y1="240" x2="196" y2="210"/>
+    <line x1="116" y1="240" x2="196" y2="275"/>
+    <line x1="116" y1="300" x2="196" y2="145"/>
+    <line x1="116" y1="300" x2="196" y2="210"/>
+    <line x1="116" y1="300" x2="196" y2="275"/>
+  </g>
+
+  <!-- Connections - hidden 1 to hidden 2 -->
+  <g stroke="#6366f1" stroke-width="1.5" opacity="0.25">
+    <line x1="224" y1="145" x2="296" y2="170"/>
+    <line x1="224" y1="145" x2="296" y2="245"/>
+    <line x1="224" y1="210" x2="296" y2="170"/>
+    <line x1="224" y1="210" x2="296" y2="245"/>
+    <line x1="224" y1="275" x2="296" y2="170"/>
+    <line x1="224" y1="275" x2="296" y2="245"/>
+  </g>
+
+  <!-- Animated pulse on key connections -->
+  <line x1="116" y1="180" x2="196" y2="210" stroke="#f59e0b" stroke-width="2.5" opacity="0.6"/>
+  <line x1="224" y1="210" x2="296" y2="170" stroke="#f59e0b" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- Arrow from network to document -->
+  <path d="M 330 207 L 390 207" stroke="#4f46e5" stroke-width="3" fill="none" marker-end="url(#arrowhead)" opacity="0.6"/>
+  <polygon points="390,200 405,207 390,214" fill="#4f46e5" opacity="0.6"/>
+
+  <!-- Document -->
+  <g filter="url(#shadow)" transform="translate(410, 95)">
+    <rect width="140" height="180" rx="8" fill="url(#doc)" stroke="#c7d2fe" stroke-width="1.5"/>
+    <!-- Document lines -->
+    <rect x="20" y="25" width="100" height="6" rx="3" fill="#c7d2fe"/>
+    <rect x="20" y="42" width="80" height="6" rx="3" fill="#c7d2fe"/>
+    <rect x="20" y="59" width="95" height="6" rx="3" fill="#c7d2fe"/>
+    <rect x="20" y="76" width="70" height="6" rx="3" fill="#c7d2fe"/>
+    <rect x="20" y="93" width="100" height="6" rx="3" fill="#e0e7ff"/>
+    <rect x="20" y="110" width="60" height="6" rx="3" fill="#e0e7ff"/>
+    <rect x="20" y="127" width="85" height="6" rx="3" fill="#e0e7ff"/>
+    <!-- Dollar sign area -->
+    <rect x="20" y="145" width="45" height="20" rx="4" fill="#dbeafe"/>
+  </g>
+
+  <!-- Warning triangle on document -->
+  <g transform="translate(510, 110)" filter="url(#glow)">
+    <polygon points="0,-20 18,12 -18,12" fill="#f59e0b" stroke="#fff" stroke-width="2"/>
+    <text x="0" y="8" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">!</text>
+  </g>
+
+  <!-- Checkmark badge -->
+  <g transform="translate(510, 260)" filter="url(#glow)">
+    <circle r="18" fill="#4f46e5"/>
+    <polyline points="-7,0 -2,6 8,-5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Small data dots floating -->
+  <circle cx="60" cy="80" r="3" fill="#93c5fd" opacity="0.6"/>
+  <circle cx="150" cy="60" r="2" fill="#6366f1" opacity="0.4"/>
+  <circle cx="250" cy="90" r="3" fill="#93c5fd" opacity="0.5"/>
+  <circle cx="350" cy="330" r="2" fill="#6366f1" opacity="0.4"/>
+  <circle cx="450" cy="50" r="3" fill="#93c5fd" opacity="0.5"/>
+  <circle cx="540" cy="340" r="2" fill="#c7d2fe" opacity="0.6"/>
+  <circle cx="80" cy="350" r="4" fill="#c7d2fe" opacity="0.4"/>
+</svg>
