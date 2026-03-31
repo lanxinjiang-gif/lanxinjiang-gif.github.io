@@ -3,9 +3,11 @@ title = "About"
 
 [profile]
 research_interests = [
-  "Computational Physics",
-  "Mathematical Principles",
-  "Proof of Theorems"
+  "Auditing",
+  "Financial Reporting",
+  "Artificial Intelligence",
+  "Machine Learning",
+  "ESG"
 ]
 
 [[sections]]
@@ -26,4 +28,3 @@ id = "news"
 type = "list"
 title = "News"
 source = "news.toml"
-
