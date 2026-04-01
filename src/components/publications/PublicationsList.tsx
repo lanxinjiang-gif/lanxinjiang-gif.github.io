@@ -24,7 +24,7 @@ interface PublicationsListProps {
 }
 
 function formatAuthorAPA(name: string): string {
-    const parts = name.trim().split(/s+/);
+    const parts = name.trim().split(/\s+/);
     if (parts.length === 1) return parts[0];
     const last = parts[parts.length - 1];
     const initials = parts.slice(0, -1).map(p => p[0].toUpperCase() + ".").join(" ");
@@ -33,16 +33,31 @@ function formatAuthorAPA(name: string): string {
 
 function generateAPA(pub: Publication): string {
     const authors = pub.authors.map(a => formatAuthorAPA(a.name));
-    let authorStr = "";
-    if (authors.length === 1) authorStr = authors[0];
-    else if (authors.length === 2) authorStr = authors.join(", & ");
-    else authorStr = authors.slice(0, -1).join(", ") + ", & " + authors[authors.length - 1];
-    const year = pub.year ? "(" + pub.year + ")" : "";
+    let authorStr: string;
+    if (authors.length === 1) {
+        authorStr = authors[0];
+    } else if (authors.length === 2) {
+        authorStr = authors[0] + ", & " + authors[1];
+    } else {
+        authorStr = authors.slice(0, -1).join(", ") + ", & " + authors[authors.length - 1];
+    }
+    const year = pub.year ? " (" + pub.year + ")." : ".";
     const venue = pub.journal || pub.conference || "";
-    const vol = pub.volume ? ", " + pub.volume : "";
-    const pages = pub.pages ? ", " + pub.pages.replace("--", "u2013") : "";
-    const doi = pub.doi ? " https://doi.org/" + pub.doi : (pub.url ? " " + pub.url : "");
-    return (authorStr + " " + year + ". " + pub.title + "." + (venue ? " " + venue : "") + vol + pages + "." + doi).replace(/s+/g, " ").trim();
+    const volStr = pub.volume
+        ? pub.volume + (pub.issue ? "(" + pub.issue + ")" : "")
+        : "";
+    const pagesStr = pub.pages ? pub.pages.replace(/--/g, "\u2013") : "";
+    let sourceStr = "";
+    if (venue || volStr || pagesStr) {
+        const sourceParts = [venue, volStr, pagesStr].filter(Boolean);
+        sourceStr = " " + sourceParts.join(", ") + ".";
+    }
+    const doi = pub.doi
+        ? " https://doi.org/" + pub.doi
+        : pub.url
+        ? " " + pub.url
+        : "";
+    return (authorStr + year + " " + pub.title + "." + sourceStr + doi).replace(/\s+/g, " ").trim();
 }
 
 export default function PublicationsList({ config, publications, embedded = false }: PublicationsListProps) {
