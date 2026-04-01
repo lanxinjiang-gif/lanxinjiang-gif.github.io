@@ -54,9 +54,21 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-background min-h-screen">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-        <div className="lg:col-span-1">
+    <div className="h-[calc(100vh-5rem)] flex overflow-hidden max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-background">
+      {/* Left column — fixed, no scroll */}
+      <div className="hidden lg:block w-80 flex-shrink-0 py-8 pr-8 overflow-hidden">
+        <Profile
+          author={data.author}
+          social={data.social}
+          features={data.features}
+          researchInterests={data.researchInterests}
+        />
+      </div>
+
+      {/* Right column — scrollable */}
+      <div className="flex-1 overflow-y-auto py-8 pl-4 lg:pl-8 space-y-8">
+        {/* Left column visible on mobile */}
+        <div className="lg:hidden">
           <Profile
             author={data.author}
             social={data.social}
@@ -65,63 +77,61 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
           />
         </div>
 
-        <div className="lg:col-span-2 space-y-8">
-          {data.pagesToShow.map((page) => (
-            <section key={page.id} id={page.id} className="scroll-mt-24 space-y-8">
-              {page.type === 'about' && page.sections.map((section: SectionConfig) => {
-                switch (section.type) {
-                  case 'markdown':
-                    return (
-                      <About
-                        key={section.id}
-                        content={section.content || ''}
-                        title={section.title}
-                      />
-                    );
-                  case 'publications':
-                    return (
-                      <SelectedPublications
-                        key={section.id}
-                        publications={section.publications || []}
-                        title={section.title}
-                        enableOnePageMode={data.enableOnePageMode}
-                      />
-                    );
-                  case 'list':
-                    return (
-                      <News
-                        key={section.id}
-                        items={section.items || []}
-                        title={section.title}
-                      />
-                    );
-                  default:
-                    return null;
-                }
-              })}
-              {page.type === 'publication' && (
-                <PublicationsList
-                  config={page.config}
-                  publications={page.publications}
-                  embedded={true}
-                />
-              )}
-              {page.type === 'text' && (
-                <TextPage
-                  config={page.config}
-                  content={page.content}
-                  embedded={true}
-                />
-              )}
-              {page.type === 'card' && (
-                <CardPage
-                  config={page.config}
-                  embedded={true}
-                />
-              )}
-            </section>
-          ))}
-        </div>
+        {data.pagesToShow.map((page) => (
+          <section key={page.id} id={page.id} className="scroll-mt-24 space-y-8">
+            {page.type === 'about' && page.sections.map((section: SectionConfig) => {
+              switch (section.type) {
+                case 'markdown':
+                  return (
+                    <About
+                      key={section.id}
+                      content={section.content || ''}
+                      title={section.title}
+                    />
+                  );
+                case 'publications':
+                  return (
+                    <SelectedPublications
+                      key={section.id}
+                      publications={section.publications || []}
+                      title={section.title}
+                      enableOnePageMode={data.enableOnePageMode}
+                    />
+                  );
+                case 'list':
+                  return (
+                    <News
+                      key={section.id}
+                      items={section.items || []}
+                      title={section.title}
+                    />
+                  );
+                default:
+                  return null;
+              }
+            })}
+            {page.type === 'publication' && (
+              <PublicationsList
+                config={page.config}
+                publications={page.publications}
+                embedded={true}
+              />
+            )}
+            {page.type === 'text' && (
+              <TextPage
+                config={page.config}
+                content={page.content}
+                embedded={true}
+              />
+            )}
+            {page.type === 'card' && (
+              <CardPage
+                config={page.config}
+                embedded={true}
+              />
+            )}
+          </section>
+        ))}
       </div>
     </div>
   );
