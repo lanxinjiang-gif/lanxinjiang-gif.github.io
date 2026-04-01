@@ -61,13 +61,14 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
     }
   }, [pathname]);
 
-  // Lock body scroll — only right column scrolls
+  // Lock body scroll and reset window scroll on every visit
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.body.style.overflow = 'hidden';
     return () => {
       document.body.style.overflow = '';
     };
-  }, []);
+  }, [pathname]);
 
   if (!data) {
     return null;
