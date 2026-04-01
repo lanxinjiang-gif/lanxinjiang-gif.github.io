@@ -4,7 +4,7 @@ title = "Teaching"
 [[items]]
 title = "ACC 320 AI in Accounting and Assurance"
 date = "2026 Spring"
-content = " The overall course objective is to familiarize students with the concepts of AI and the way in which AI adds value to business, accounting, and auditing. In this context, AI refers to the technologies employed in enterprise accounting in the broadest sense, including Machine Learning (ML) and Natural Language Processing (NLP). This course introduces the concepts and applications of AI in modern organizations from the perspective of accounting and auditing. To illustrate the underlying logic and realization of AI in accounting and auditing, this course also introduces AI tools and demonstrates how to use them to analyze real-world data. Students will gain hands-on experience with AI software for accounting and auditing."
+content = "This course introduces the concepts and applications of Artificial Intelligence (AI) in accounting and auditing. Topics include Python-based data analysis, text mining, machine learning, and emerging technologies such as generative and agentic AI. Students learn how AI is used in financial reporting, auditing, and other accounting functions, with an emphasis on real-world applications and use cases. The course incorporates hands-on experience with AI tools and data, as well as instruction in prompt engineering. Ethical considerations and challenges of AI adoption in business are also examined. By the end of the course, students will be able to apply AI techniques and evaluate their impact in accounting and assurance contexts."
 tags = ["Undergraduate", "Business"]
 
 
