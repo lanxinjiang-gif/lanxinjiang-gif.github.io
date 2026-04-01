@@ -361,9 +361,8 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                             navigator.clipboard.writeText(apa);
                                                             setCopiedApaId(pub.id);
                                                             setTimeout(() => setCopiedApaId(null), 2000);
-                                                            if (typeof window !== 'undefined' && (window as any).umami) {
-                                                                (window as any).umami.track('cite-apa', { title: pub.title });
-                                                            }
+                                                            const w = window as Window & { umami?: { track: (e: string, d?: Record<string, string>) => void } };
+                                                            if (w.umami) w.umami.track('cite-apa', { title: pub.title });
                                                         }}
                                                         className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md text-xs font-medium transition-colors bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
                                                     >
