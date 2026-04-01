@@ -61,21 +61,14 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
     }
   }, [pathname]);
 
-  // Lock body scroll and reset window scroll on every visit
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [pathname]);
 
   if (!data) {
     return null;
   }
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] lg:h-[calc(100vh-5rem)] overflow-hidden max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-background">
+    <div className="fixed top-16 lg:top-20 bottom-0 left-0 right-0 flex overflow-hidden bg-background">
+      <div className="flex w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Left column — fixed, no scroll (desktop only) */}
       <div className="hidden lg:flex flex-col w-80 flex-shrink-0 py-10 pr-8 overflow-hidden">
         <Profile
@@ -153,6 +146,7 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
             )}
           </section>
         ))}
+      </div>
       </div>
     </div>
   );
