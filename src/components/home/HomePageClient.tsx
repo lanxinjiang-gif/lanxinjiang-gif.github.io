@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Profile from '@/components/home/Profile';
 import About from '@/components/home/About';
 import SelectedPublications from '@/components/home/SelectedPublications';
@@ -50,14 +51,15 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
   const fallback = dataByLocale[defaultLocale] || Object.values(dataByLocale)[0];
   const data = dataByLocale[locale] || fallback;
 
+  const pathname = usePathname();
   const rightColRef = useRef<HTMLDivElement>(null);
 
-  // Scroll right column to top on mount
+  // Scroll right column to top whenever About page is visited
   useEffect(() => {
     if (rightColRef.current) {
       rightColRef.current.scrollTop = 0;
     }
-  }, []);
+  }, [pathname]);
 
   // Lock body scroll — only right column scrolls
   useEffect(() => {
