@@ -75,7 +75,7 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
       </div>
 
       {/* Right column — scrollable */}
-      <div className="flex-1 overflow-y-auto py-8 lg:pl-8 space-y-8">
+      <div className="flex-1 overflow-y-auto scrollbar-hide py-8 lg:pl-8 space-y-8">
         {/* Profile visible on mobile */}
         <div className="lg:hidden">
           <Profile
