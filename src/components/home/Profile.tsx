@@ -1,4 +1,28 @@
-'use client';
+                                {/* Email tooltip */}
+                                <AnimatePresence>
+                                    {showEmail && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                                            animate={{ opacity: 1, y: -10, scale: 1 }}
+                                            exit={{ opacity: 0, y: -20, scale: 0.8 }}
+                                            className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-neutral-800 text-white px-4 py-3 rounded-lg text-sm shadow-lg whitespace-nowrap z-20"
+                                            onMouseEnter={() => setShowEmail(true)}
+                                            onMouseLeave={() => setShowEmail(false)}
+                                        >
+                                            <div className="text-center">
+                                                <p className="text-xs text-neutral-400 mb-1">{social.email}</p>
+                                                <a
+                                                    href={`mailto:`}
+                                                    className="inline-flex items-center justify-center space-x-2 bg-accent hover:bg-accent-dark text-white px-3 py-1 rounded-md text-xs font-medium transition-colors duration-200"
+                                                >
+                                                    <EnvelopeIcon className="h-4 w-4" />
+                                                    <span>Send Email</span>
+                                                </a>
+                                            </div>
+                                            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-neutral-800"></div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>'use client';
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -42,8 +66,6 @@ export default function Profile({ author, social, features, researchInterests }:
     const [showAddress, setShowAddress] = useState(false);
     const [isAddressPinned, setIsAddressPinned] = useState(false);
     const [showEmail, setShowEmail] = useState(false);
-    const [isEmailPinned, setIsEmailPinned] = useState(false);
-    const [lastClickedTooltip, setLastClickedTooltip] = useState<'email' | 'address' | null>(null);
 
     // Check local storage for user's like status
     useEffect(() => {
@@ -215,27 +237,12 @@ export default function Profile({ author, social, features, researchInterests }:
                         return (
                             <div key={link.name} className="relative">
                                 <button
-                                    onMouseEnter={() => {
-                                        if (!isEmailPinned) setShowEmail(true);
-                                        setLastClickedTooltip('email');
-                                    }}
-                                    onMouseLeave={() => !isEmailPinned && setShowEmail(false)}
-                                    onClick={() => {
-                                        setIsEmailPinned(!isEmailPinned);
-                                        setShowEmail(!isEmailPinned);
-                                        setLastClickedTooltip('email');
-                                    }}
-                                    className={`p-2 sm:p-2 transition-colors duration-200 ${isEmailPinned
-                                        ? 'text-accent'
-                                        : 'text-neutral-600 dark:text-neutral-400 hover:text-accent'
-                                        }`}
+                                    onMouseEnter={() => setShowEmail(true)}
+                                    onMouseLeave={() => setShowEmail(false)}
+                                    className="p-2 text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors duration-200"
                                     aria-label={link.name}
                                 >
-                                    {isEmailPinned ? (
-                                        <EnvelopeSolidIcon className="h-5 w-5" />
-                                    ) : (
-                                        <EnvelopeIcon className="h-5 w-5" />
-                                    )}
+                                    <EnvelopeIcon className="h-5 w-5" />
                                 </button>
 
                                 {/* Email tooltip */}
