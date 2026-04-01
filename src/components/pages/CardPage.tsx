@@ -33,7 +33,6 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
             transition={{ duration: 0.6, delay: 0.4 }}
         >
             <div className={embedded ? "mb-4" : "mb-8"}>
-
                 {config.description && (
                     <div className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500 max-w-2xl leading-relaxed`}>
                         <ReactMarkdown components={markdownComponents}>{config.description}</ReactMarkdown>
@@ -44,7 +43,7 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
             <div className="space-y-4">
                 {config.items.map((item, index) => {
                     const isExpanded = expandedIndex === index;
-                    const hasDetails = !!(item.content || item.tags);
+                    const hasDetails = !!item.content;
 
                     return (
                         <motion.div
@@ -71,9 +70,17 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                                     {item.subtitle && (
                                         <p className="text-sm text-accent font-medium">{item.subtitle}</p>
                                     )}
-                                    {item.date && (
-                                        <p className="text-xs font-medium text-neutral-400 dark:text-neutral-500 mt-0.5">{item.date}</p>
-                                    )}
+                                    {/* Date + tags inline */}
+                                    <div className="flex flex-wrap items-center gap-2 mt-0.5">
+                                        {item.date && (
+                                            <span className="text-xs font-medium text-neutral-400 dark:text-neutral-500">{item.date}</span>
+                                        )}
+                                        {item.tags && item.tags.map(tag => (
+                                            <span key={tag} className="text-xs text-neutral-500 bg-neutral-50 dark:bg-neutral-800/50 px-2 py-0.5 rounded border border-neutral-100 dark:border-neutral-800">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                                 {hasDetails && (
                                     <div className="flex-shrink-0 self-center ml-2">
@@ -95,21 +102,10 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="px-5 pb-5 border-t border-neutral-100 dark:border-neutral-800 pt-4 space-y-3">
-                                            {item.content && (
-                                                <div className={`${embedded ? "text-sm" : "text-base"} text-neutral-600 dark:text-neutral-400 leading-relaxed`}>
-                                                    <ReactMarkdown components={markdownComponents}>{item.content}</ReactMarkdown>
-                                                </div>
-                                            )}
-                                            {item.tags && (
-                                                <div className="flex flex-wrap gap-2">
-                                                    {item.tags.map(tag => (
-                                                        <span key={tag} className="text-xs text-neutral-500 bg-neutral-50 dark:bg-neutral-800/50 px-2 py-1 rounded border border-neutral-100 dark:border-neutral-800">
-                                                            {tag}
-                                                        </span>
-                                                    ))}
-                                                </div>
-                                            )}
+                                        <div className="px-5 pb-5 border-t border-neutral-100 dark:border-neutral-800 pt-4">
+                                            <div className={`${embedded ? "text-sm" : "text-base"} text-neutral-600 dark:text-neutral-400 leading-relaxed`}>
+                                                <ReactMarkdown components={markdownComponents}>{item.content}</ReactMarkdown>
+                                            </div>
                                         </div>
                                     </motion.div>
                                 )}
