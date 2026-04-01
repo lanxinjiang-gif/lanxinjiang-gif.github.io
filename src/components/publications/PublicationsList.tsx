@@ -295,7 +295,6 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                     )}
                                                     {pub.abstract && (
                                                         <div className={pub.preview ? "md:w-1/2 flex flex-col" : "w-full"}>
-                                                            <p className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-2">Abstract</p>
                                                             <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed overflow-y-auto" style={{ maxHeight: '360px' }}>
                                                                 {pub.abstract}
                                                             </p>
