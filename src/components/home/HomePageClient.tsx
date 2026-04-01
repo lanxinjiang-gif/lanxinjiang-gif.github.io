@@ -54,13 +54,21 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
   const pathname = usePathname();
   const rightColRef = useRef<HTMLDivElement>(null);
 
-  // Scroll right column to top whenever About page is visited
   useEffect(() => {
+    // Reset window scroll and body overflow every time this page is visited
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+
+    // Reset right column scroll to top
     if (rightColRef.current) {
       rightColRef.current.scrollTop = 0;
     }
-  }, [pathname]);
 
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [pathname]);
 
   if (!data) {
     return null;
@@ -69,20 +77,8 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
   return (
     <div className="fixed top-16 lg:top-20 bottom-0 left-0 right-0 flex overflow-hidden bg-background">
       <div className="flex w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Left column — fixed, no scroll (desktop only) */}
-      <div className="hidden lg:flex flex-col w-80 flex-shrink-0 py-10 pr-8 overflow-hidden">
-        <Profile
-          author={data.author}
-          social={data.social}
-          features={data.features}
-          researchInterests={data.researchInterests}
-        />
-      </div>
-
-      {/* Right column — scrollable */}
-      <div ref={rightColRef} className="flex-1 overflow-y-auto scrollbar-hide py-10 lg:pl-8 space-y-8">
-        {/* Profile visible on mobile */}
-        <div className="lg:hidden">
+        {/* Left column — fixed, no scroll (desktop only) */}
+        <div className="hidden lg:flex flex-col w-80 flex-shrink-0 py-10 pr-8 overflow-hidden">
           <Profile
             author={data.author}
             social={data.social}
@@ -91,62 +87,74 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
           />
         </div>
 
-        {data.pagesToShow.map((page) => (
-          <section key={page.id} id={page.id} className="scroll-mt-24 space-y-8">
-            {page.type === 'about' && page.sections.map((section: SectionConfig) => {
-              switch (section.type) {
-                case 'markdown':
-                  return (
-                    <About
-                      key={section.id}
-                      content={section.content || ''}
-                      title={section.title}
-                    />
-                  );
-                case 'publications':
-                  return (
-                    <SelectedPublications
-                      key={section.id}
-                      publications={section.publications || []}
-                      title={section.title}
-                      enableOnePageMode={data.enableOnePageMode}
-                    />
-                  );
-                case 'list':
-                  return (
-                    <News
-                      key={section.id}
-                      items={section.items || []}
-                      title={section.title}
-                    />
-                  );
-                default:
-                  return null;
-              }
-            })}
-            {page.type === 'publication' && (
-              <PublicationsList
-                config={page.config}
-                publications={page.publications}
-                embedded={true}
-              />
-            )}
-            {page.type === 'text' && (
-              <TextPage
-                config={page.config}
-                content={page.content}
-                embedded={true}
-              />
-            )}
-            {page.type === 'card' && (
-              <CardPage
-                config={page.config}
-                embedded={true}
-              />
-            )}
-          </section>
-        ))}
-      </div>
+        {/* Right column — scrollable */}
+        <div ref={rightColRef} className="flex-1 overflow-y-auto scrollbar-hide py-10 lg:pl-8 space-y-8">
+          {/* Profile visible on mobile */}
+          <div className="lg:hidden">
+            <Profile
+              author={data.author}
+              social={data.social}
+              features={data.features}
+              researchInterests={data.researchInterests}
+            />
+          </div>
+
+          {data.pagesToShow.map((page) => (
+            <section key={page.id} id={page.id} className="scroll-mt-24 space-y-8">
+              {page.type === 'about' && page.sections.map((section: SectionConfig) => {
+                switch (section.type) {
+                  case 'markdown':
+                    return (
+                      <About
+                        key={section.id}
+                        content={section.content || ''}
+                        title={section.title}
+                      />
+                    );
+                  case 'publications':
+                    return (
+                      <SelectedPublications
+                        key={section.id}
+                        publications={section.publications || []}
+                        title={section.title}
+                        enableOnePageMode={data.enableOnePageMode}
+                      />
+                    );
+                  case 'list':
+                    return (
+                      <News
+                        key={section.id}
+                        items={section.items || []}
+                        title={section.title}
+                      />
+                    );
+                  default:
+                    return null;
+                }
+              })}
+              {page.type === 'publication' && (
+                <PublicationsList
+                  config={page.config}
+                  publications={page.publications}
+                  embedded={true}
+                />
+              )}
+              {page.type === 'text' && (
+                <TextPage
+                  config={page.config}
+                  content={page.content}
+                  embedded={true}
+                />
+              )}
+              {page.type === 'card' && (
+                <CardPage
+                  config={page.config}
+                  embedded={true}
+                />
+              )}
+            </section>
+          ))}
+        </div>
       </div>
     </div>
   );
