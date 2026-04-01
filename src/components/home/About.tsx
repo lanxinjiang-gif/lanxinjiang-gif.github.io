@@ -2,16 +2,13 @@
 
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
-import { useMessages } from '@/lib/i18n/useMessages';
 
 interface AboutProps {
     content: string;
     title?: string;
 }
 
-export default function About({ content, title }: AboutProps) {
-    const messages = useMessages();
-    const resolvedTitle = title || messages.home.about;
+export default function About({ content }: AboutProps) {
 
     return (
         <motion.section
