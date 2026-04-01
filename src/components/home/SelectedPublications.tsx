@@ -27,7 +27,7 @@ export default function SelectedPublications({ publications, title, enableOnePag
                 </Link>
             </div>
             <div className="space-y-4">
-                {publications.map((pub, index) => {
+                {publications.map((pub) => {
                     const pubUrl = pub.doi ? `https://doi.org/${pub.doi}` : pub.url;
                     return (
                     <div

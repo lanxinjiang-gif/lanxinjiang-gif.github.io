@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Profile from '@/components/home/Profile';
 import About from '@/components/home/About';
 import SelectedPublications from '@/components/home/SelectedPublications';
@@ -50,6 +50,15 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
   const fallback = dataByLocale[defaultLocale] || Object.values(dataByLocale)[0];
   const data = dataByLocale[locale] || fallback;
 
+  const rightColRef = useRef<HTMLDivElement>(null);
+
+  // Scroll right column to top on mount
+  useEffect(() => {
+    if (rightColRef.current) {
+      rightColRef.current.scrollTop = 0;
+    }
+  }, []);
+
   // Lock body scroll — only right column scrolls
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -75,7 +84,7 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
       </div>
 
       {/* Right column — scrollable */}
-      <div className="flex-1 overflow-y-auto scrollbar-hide py-8 lg:pl-8 space-y-8">
+      <div ref={rightColRef} className="flex-1 overflow-y-auto scrollbar-hide py-8 lg:pl-8 space-y-8">
         {/* Profile visible on mobile */}
         <div className="lg:hidden">
           <Profile
