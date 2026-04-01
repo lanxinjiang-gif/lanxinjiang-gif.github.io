@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { LocaleProvider } from '@/components/ui/LocaleProvider';
 import { getConfig } from '@/lib/config';
 import { getRuntimeI18nConfig } from '@/lib/i18n/config';
+import Script from 'next/script';
 import type { SiteConfig } from '@/lib/config';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -186,6 +187,12 @@ export default function RootLayout({
             />
           </LocaleProvider>
         </ThemeProvider>
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="328eee55-6ce6-4a0e-b061-9f1f237a0a41"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

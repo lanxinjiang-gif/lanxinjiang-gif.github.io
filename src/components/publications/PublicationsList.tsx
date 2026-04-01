@@ -348,6 +348,8 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                             className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md text-xs font-medium bg-accent text-white hover:bg-accent/90 transition-colors"
+                                                            data-umami-event="view-paper"
+                                                            data-umami-event-title={pub.title}
                                                         >
                                                             <ArrowTopRightOnSquareIcon className="h-3.5 w-3.5" />
                                                             View Paper
@@ -359,6 +361,9 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                             navigator.clipboard.writeText(apa);
                                                             setCopiedApaId(pub.id);
                                                             setTimeout(() => setCopiedApaId(null), 2000);
+                                                            if (typeof window !== 'undefined' && (window as any).umami) {
+                                                                (window as any).umami.track('cite-apa', { title: pub.title });
+                                                            }
                                                         }}
                                                         className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md text-xs font-medium transition-colors bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
                                                     >
