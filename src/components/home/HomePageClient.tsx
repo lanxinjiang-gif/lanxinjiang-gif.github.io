@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import Profile from '@/components/home/Profile';
 import About from '@/components/home/About';
 import SelectedPublications from '@/components/home/SelectedPublications';
@@ -49,14 +50,22 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
   const fallback = dataByLocale[defaultLocale] || Object.values(dataByLocale)[0];
   const data = dataByLocale[locale] || fallback;
 
+  // Lock body scroll — only right column scrolls
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   if (!data) {
     return null;
   }
 
   return (
-    <div className="h-[calc(100vh-5rem)] flex overflow-hidden max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-background">
-      {/* Left column — fixed, no scroll */}
-      <div className="hidden lg:block w-80 flex-shrink-0 py-8 pr-8 overflow-hidden">
+    <div className="flex h-[calc(100vh-4rem)] lg:h-[calc(100vh-5rem)] overflow-hidden max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-background">
+      {/* Left column — fixed, no scroll (desktop only) */}
+      <div className="hidden lg:flex flex-col w-80 flex-shrink-0 py-8 pr-8 overflow-hidden">
         <Profile
           author={data.author}
           social={data.social}
@@ -66,8 +75,8 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
       </div>
 
       {/* Right column — scrollable */}
-      <div className="flex-1 overflow-y-auto py-8 pl-4 lg:pl-8 space-y-8">
-        {/* Left column visible on mobile */}
+      <div className="flex-1 overflow-y-auto py-8 lg:pl-8 space-y-8">
+        {/* Profile visible on mobile */}
         <div className="lg:hidden">
           <Profile
             author={data.author}
