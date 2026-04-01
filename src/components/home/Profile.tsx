@@ -105,10 +105,7 @@ export default function Profile({ author, social, features, researchInterests }:
     ];
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+        <div
             className="sticky top-24"
         >
             {/* Profile Image */}
@@ -353,6 +350,6 @@ export default function Profile({ author, social, features, researchInterests }:
                     </div>
                 </div>
             )}
-        </motion.div>
+        </div>
     );
 }

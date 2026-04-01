@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Publication } from '@/types/publication';
 import { useMessages } from '@/lib/i18n/useMessages';
@@ -16,11 +15,7 @@ export default function SelectedPublications({ publications, title, enableOnePag
     const resolvedTitle = title || messages.home.selectedPublications;
 
     return (
-        <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-        >
+        <section>
             <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-serif font-bold text-primary">{resolvedTitle}</h2>
                 <Link
@@ -35,11 +30,8 @@ export default function SelectedPublications({ publications, title, enableOnePag
                 {publications.map((pub, index) => {
                     const pubUrl = pub.doi ? `https://doi.org/${pub.doi}` : pub.url;
                     return (
-                    <motion.div
+                    <div
                         key={pub.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: 0.1 * index }}
                         className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow-sm border border-neutral-200 dark:border-[rgba(148,163,184,0.24)] hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
                     >
                         <h3 className="font-semibold text-primary mb-2 leading-tight">
@@ -70,10 +62,10 @@ export default function SelectedPublications({ publications, title, enableOnePag
                                 {pub.description}
                             </p>
                         )}
-                    </motion.div>
+                    </div>
                     );
                 })}
             </div>
-        </motion.section>
+        </section>
     );
 }
