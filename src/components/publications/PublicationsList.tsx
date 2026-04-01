@@ -23,6 +23,28 @@ interface PublicationsListProps {
     embedded?: boolean;
 }
 
+function formatAuthorAPA(name: string): string {
+    const parts = name.trim().split(/s+/);
+    if (parts.length === 1) return parts[0];
+    const last = parts[parts.length - 1];
+    const initials = parts.slice(0, -1).map(p => p[0].toUpperCase() + ".").join(" ");
+    return last + ", " + initials;
+}
+
+function generateAPA(pub: Publication): string {
+    const authors = pub.authors.map(a => formatAuthorAPA(a.name));
+    let authorStr = "";
+    if (authors.length === 1) authorStr = authors[0];
+    else if (authors.length === 2) authorStr = authors.join(", & ");
+    else authorStr = authors.slice(0, -1).join(", ") + ", & " + authors[authors.length - 1];
+    const year = pub.year ? "(" + pub.year + ")" : "";
+    const venue = pub.journal || pub.conference || "";
+    const vol = pub.volume ? ", " + pub.volume : "";
+    const pages = pub.pages ? ", " + pub.pages.replace("--", "u2013") : "";
+    const doi = pub.doi ? " https://doi.org/" + pub.doi : (pub.url ? " " + pub.url : "");
+    return (authorStr + " " + year + ". " + pub.title + "." + (venue ? " " + venue : "") + vol + pages + "." + doi).replace(/s+/g, " ").trim();
+}
+
 export default function PublicationsList({ config, publications, embedded = false }: PublicationsListProps) {
     const messages = useMessages();
     const [searchQuery, setSearchQuery] = useState('');
@@ -31,6 +53,7 @@ export default function PublicationsList({ config, publications, embedded = fals
     const [showFilters, setShowFilters] = useState(false);
     const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
     const [expandedBibtexId, setExpandedBibtexId] = useState<string | null>(null);
+    const [copiedApaId, setCopiedApaId] = useState<string | null>(null);
 
     // const years = useMemo(() => {
     //     const uniqueYears = Array.from(new Set(publications.map(p => p.year)));
@@ -315,6 +338,18 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                             View Paper
                                                         </a>
                                                     )}
+                                                    <button
+                                                        onClick={() => {
+                                                            const apa = generateAPA(pub);
+                                                            navigator.clipboard.writeText(apa);
+                                                            setCopiedApaId(pub.id);
+                                                            setTimeout(() => setCopiedApaId(null), 2000);
+                                                        }}
+                                                        className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-md text-xs font-medium transition-colors bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+                                                    >
+                                                        <ClipboardDocumentIcon className="h-3.5 w-3.5" />
+                                                        {copiedApaId === pub.id ? "Copied!" : "Cite (APA)"}
+                                                    </button>
                                                     {pub.bibtex && (
                                                         <button
                                                             onClick={() => setExpandedBibtexId(expandedBibtexId === pub.id ? null : pub.id)}
@@ -326,7 +361,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                             )}
                                                         >
                                                             <BookOpenIcon className="h-3.5 w-3.5" />
-                                                            {messages.publications.bibtex}
+                                                            Copy BibTeX
                                                         </button>
                                                     )}
                                                 </div>
