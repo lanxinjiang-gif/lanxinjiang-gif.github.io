@@ -76,7 +76,7 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
   return (
     <div className="flex h-[calc(100vh-4rem)] lg:h-[calc(100vh-5rem)] overflow-hidden max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-background">
       {/* Left column — fixed, no scroll (desktop only) */}
-      <div className="hidden lg:flex flex-col w-80 flex-shrink-0 py-8 pr-8 overflow-hidden">
+      <div className="hidden lg:flex flex-col w-80 flex-shrink-0 py-10 pr-8 overflow-hidden">
         <Profile
           author={data.author}
           social={data.social}
@@ -86,7 +86,7 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
       </div>
 
       {/* Right column — scrollable */}
-      <div ref={rightColRef} className="flex-1 overflow-y-auto scrollbar-hide py-8 lg:pl-8 space-y-8">
+      <div ref={rightColRef} className="flex-1 overflow-y-auto scrollbar-hide py-10 lg:pl-8 space-y-8">
         {/* Profile visible on mobile */}
         <div className="lg:hidden">
           <Profile
