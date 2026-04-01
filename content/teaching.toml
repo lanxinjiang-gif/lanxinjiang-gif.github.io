@@ -1,6 +1,5 @@
 type = "card"
 title = "Teaching"
-description = "Courses I have taught."
 
 [[items]]
 title = "ACC 320 AI in Accounting and Assurance"
