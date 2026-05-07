@@ -4,18 +4,14 @@ title = "Teaching"
 [[items]]
 title = "ACC 320 AI in Accounting and Assurance"
 date = "2026 Spring"
-content = "This course introduces the concepts and applications of Artificial Intelligence (AI) in accounting and auditing. Topics include Python-based data analysis, text mining, machine learning, and emerging technologies such as generative and agentic AI. Students learn how AI is used in financial reporting, auditing, and other accounting functions, with an emphasis on real-world applications and use cases. The course incorporates hands-on experience with AI tools and data, as well as instruction in prompt engineering. Ethical considerations and challenges of AI adoption in business are also examined. By the end of the course, students will be able to apply AI techniques and evaluate their impact in accounting and assurance contexts."
+content = "This course introduces the concepts and applications of Artificial Intelligence (AI) in accounting and auditing. Topics include Python-based data analysis, text mining, machine learning, and emerging technologies such as generative and agentic AI. Students learn how AI is used in financial reporting, auditing, and other accounting functions, with an emphasis on real-world applications and use cases. The course incorporates hands-on experience with AI tools and data, as well as instruction in prompt engineering. Ethical considerations and challenges of AI adoption in business are also examined. By the end of the course, students will be able to apply AI techniques and evaluate their impact in accounting and assurance contexts.\n\n**What Students Are Saying** *(Spring 2026)*\n\n> “This class is honestly great for a beginner like me, since the class doesn’t move fast, and we are always welcome to ask questions without hesitation. The applications are also very beginner-friendly.” — *Amy Garcia*\n\n> “I actually have built hundreds of tools in AI since using this knowledge from this course. The course has been well organized and very relevant, especially with how important AI is becoming in business.” — *Peter Ritieni*\n\n> “This course is thoughtfully organized and the progression from a beginner’s perspective of AI to practical application makes it easy for someone with no background knowledge in AI or computer concepts to follow along.” — *Gillian Wu*\n\n> “I feel more confident knowing that the field of accounting still requires accountants. An important lesson I learned in this class is that AI changes how the work is done, not who does it.” — *Qi Bin Chen*\n\n> “I think you are doing a great job teaching this class — the topics are much different than most business classes I’ve taken. You’ve done a great job at teaching them.” — *James Samuel*\n\n> “I really enjoyed the first lecture on how AI is used and how it cannot be replaced by humans at this time. It raised my confidence in my future and increased my interest in learning to use AI in the workplace.” — *Siya Li*"
 tags = ["Undergraduate", "Business"]
-
-
 
 [[items]]
 title = "ACC 214 Managerial Cost Anlysis and Applications"
 date = "2025 Fall, 2026 Fall"
 content = "A study of cost concepts, and theories and the implementation and evaluation of an accounting system as a source of information for decision making, planning, control, and evaluation of the organization by management. Other topics includes cost-volume-profit analysis, budgeting and variance analysis. The overall course objective is to familiarize students with cost accounting concepts and how to make business decisions using accounting information, while incorporating Excel modeling and data visualization to enhance students' analytical and decision-support skills. The course is designed for both accounting and non-accounting business majors."
 tags = ["Undergraduate", "Business"]
-
-
 
 [[items]]
 title = "22:010:684 Intro to A.I."
